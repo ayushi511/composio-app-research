@@ -1,0 +1,1525 @@
+[
+  {
+    "id": 1,
+    "app": "Salesforce",
+    "total_urls": 6,
+    "broken_urls": 6,
+    "url_checks": [
+      {
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/intro_api.htm",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.api_bulk.meta/api_bulk/intro_bulk_api.htm",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/intro_api_tooling.htm",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.graphql.meta/graphql/intro.htm",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm#oauth",
+        "status": 403
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "app": "HubSpot",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developers.hubspot.com/docs/api/overview",
+        "status": 200
+      },
+      {
+        "url": "https://developers.hubspot.com/docs/api/authorization/oauth",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "app": "Pipedrive",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.pipedrive.com/docs/api/v1/",
+        "status": 200
+      },
+      {
+        "url": "https://pipedrive.com/en/api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.attio.com/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "app": "Twenty",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://twenty.com",
+        "status": 200
+      },
+      {
+        "url": "https://github.com/twentyhq/twenty",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "app": "Podio",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developers.podio.com/",
+        "status": 200
+      },
+      {
+        "url": "https://developers.podio.com/docs/authentication",
+        "status": 500
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "app": "Zoho CRM",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://www.zoho.com/crm/api/overview.html",
+        "status": 404
+      },
+      {
+        "url": "https://www.zoho.com/crm/api/auth.html",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "app": "Close",
+    "total_urls": 3,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.close.com/",
+        "status": 200
+      },
+      {
+        "url": "https://developer.close.com/reference",
+        "status": 404
+      },
+      {
+        "url": "https://developer.close.com/authentication",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.copper.com/docs/getting-started",
+        "status": 404
+      },
+      {
+        "url": "https://developer.copper.com/reference",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "app": "DealCloud",
+    "total_urls": 1,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://api.dealcloud.com/docs",
+        "status": "FAILED: HTTPSConnectionPool(host='api.dealcloud.com', port=443): Max retries exceeded with url: /docs (Caused by NameResolutionError(\"HTTPSConnection(host='api.dealcloud.com', port=443): Failed to resolve 'api.dealcloud.com' ([Errno 11001] getaddrinfo failed)\"))"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "app": "Zendesk",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.zendesk.com/api-reference/introduction/",
+        "status": 403
+      },
+      {
+        "url": "https://developer.zendesk.com/api-reference/general/authentication/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "app": "Intercom",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developers.intercom.com/api-reference/docs/authentication",
+        "status": 404
+      },
+      {
+        "url": "https://developers.intercom.com/api-reference/docs/graph-ql",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "app": "Freshdesk",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.freshdesk.com/api/",
+        "status": 200
+      },
+      {
+        "url": "https://support.freshdesk.com/en/support/solutions/articles/215517",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "app": "Front",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developers.front.com/reference",
+        "status": "FAILED: HTTPSConnectionPool(host='developers.front.com', port=443): Max retries exceeded with url: /reference (Caused by NameResolutionError(\"HTTPSConnection(host='developers.front.com', port=443): Failed to resolve 'developers.front.com' ([Errno 11001] getaddrinfo failed)\"))"
+      },
+      {
+        "url": "https://developers.front.com/docs",
+        "status": "FAILED: HTTPSConnectionPool(host='developers.front.com', port=443): Max retries exceeded with url: /docs (Caused by NameResolutionError(\"HTTPSConnection(host='developers.front.com', port=443): Failed to resolve 'developers.front.com' ([Errno 11001] getaddrinfo failed)\"))"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "total_urls": 0,
+    "broken_urls": 0,
+    "url_checks": []
+  },
+  {
+    "id": 16,
+    "app": "LiveAgent",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://www.liveagent.com/developer/api",
+        "status": 404
+      },
+      {
+        "url": "https://www.liveagent.com/developer",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "app": "Plain",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://plain.com",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "app": "Help Scout",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.helpscout.com/api",
+        "status": 404
+      },
+      {
+        "url": "https://github.com/helpscout/helpscout-api",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "app": "Gorgias",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.gorgias.com/docs/getting-started",
+        "status": 200
+      },
+      {
+        "url": "https://developers.gorgias.com/docs/authentication",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developer.gladly.com/",
+        "status": 200
+      },
+      {
+        "url": "https://developer.gladly.com/docs/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "app": "Slack",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://api.slack.com/",
+        "status": 200
+      },
+      {
+        "url": "https://api.slack.com/web",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "app": "Twilio",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://www.twilio.com/docs/iam/authentication",
+        "status": 404
+      },
+      {
+        "url": "https://www.twilio.com/docs/usage/api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "app": "Zoho Cliq",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://www.zoho.com/cliq/developers.html",
+        "status": 404
+      },
+      {
+        "url": "https://www.zoho.com/cliq/api/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://open.larksuite.com/",
+        "status": 200
+      },
+      {
+        "url": "https://open.larksuite.com/document/ukc26w5j",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "app": "Pumble",
+    "total_urls": 0,
+    "broken_urls": 0,
+    "url_checks": []
+  },
+  {
+    "id": 26,
+    "app": "Discord",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://discord.com/developers/docs/intro",
+        "status": 200
+      },
+      {
+        "url": "https://discord.com/developers/docs/topics/oauth2",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "app": "Telegram",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://core.telegram.org/bots/api",
+        "status": 200
+      },
+      {
+        "url": "https://core.telegram.org/api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "app": "WhatsApp Business",
+    "total_urls": 3,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.facebook.com/docs/whatsapp",
+        "status": 200
+      },
+      {
+        "url": "https://developers.facebook.com/docs/whatsapp/api/messages",
+        "status": 200
+      },
+      {
+        "url": "https://developers.facebook.com/docs/whatsapp/getting-started",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "app": "Aircall",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.aircall.io",
+        "status": 200
+      },
+      {
+        "url": "https://developers.aircall.io/v2",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developer.vonage.com/docs",
+        "status": 200
+      },
+      {
+        "url": "https://developer.vonage.com/docs/authentication",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "app": "Google Ads",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/start",
+        "status": 200
+      },
+      {
+        "url": "https://developers.google.com/google-ads/api/docs/oauth",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.facebook.com/docs/marketing-apis/",
+        "status": 200
+      },
+      {
+        "url": "https://developers.facebook.com/docs/marketing-api/overview",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "app": "LinkedIn Ads",
+    "total_urls": 3,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+        "status": 200
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/linkedin/marketing/ads",
+        "status": 404
+      },
+      {
+        "url": "https://developer.linkedin.com/docs/marketing-ads",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "app": "GoHighLevel",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://highlevel.stoplight.io",
+        "status": 200
+      },
+      {
+        "url": "https://go-highlevel.com/developers",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "app": "Mailchimp",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://mailchimp.com/developer/marketing/api/",
+        "status": 200
+      },
+      {
+        "url": "https://mailchimp.com/developer/marketing/docs/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "app": "Klaviyo",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developers.klaviyo.com/en/docs/authentication",
+        "status": 404
+      },
+      {
+        "url": "https://developers.klaviyo.com/en/reference",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "total_urls": 1,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://systeme.io/docs",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "app": "Pinterest",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.pinterest.com/",
+        "status": 200
+      },
+      {
+        "url": "https://developers.pinterest.com/docs/ads/api-overview/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "app": "Threads (Meta)",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.facebook.com/docs/threads",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "app": "SendGrid",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://docs.sendgrid.com/api-reference",
+        "status": 200
+      },
+      {
+        "url": "https://sendgrid.com/docs/API_Reference/api_v3.html",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "app": "Shopify",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://shopify.dev/docs/api/admin",
+        "status": 200
+      },
+      {
+        "url": "https://shopify.dev/docs/authentication",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "app": "WooCommerce",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://woocommerce.com/document/woocommerce-rest-api/",
+        "status": 200
+      },
+      {
+        "url": "https://woocommerce.com/document/woocommerce-rest-api/#authentication",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "app": "BigCommerce",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developer.bigcommerce.com/api-reference",
+        "status": 200
+      },
+      {
+        "url": "https://developer.bigcommerce.com/api-docs/getting-started/authentication/oauth2",
+        "status": "FAILED: HTTPSConnectionPool(host='docs.bigcommerce.com', port=443): Read timed out. (read timeout=8)"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "total_urls": 3,
+    "broken_urls": 3,
+    "url_checks": [
+      {
+        "url": "https://developer.salesforce.com/docs/commerce/commerce-cloud-apis/guide/oca-overview",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/commerce/commerce-cloud-apis/guide/order-management-api",
+        "status": 403
+      },
+      {
+        "url": "https://developer.salesforce.com/docs/commerce/commerce-cloud-apis/guide/soap-apis",
+        "status": 403
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "app": "Magento (Adobe Commerce)",
+    "total_urls": 3,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.adobe.com/commerce/",
+        "status": 200
+      },
+      {
+        "url": "https://developer.adobe.com/commerce/rest-api/",
+        "status": 404
+      },
+      {
+        "url": "https://developer.adobe.com/commerce/graphql-api/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "app": "Squarespace",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developers.squarespace.com/commerce-api",
+        "status": 404
+      },
+      {
+        "url": "https://developers.squarespace.com/commerce-api/reference",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "app": "Ecwid",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://api-docs.ecwid.com/",
+        "status": 200
+      },
+      {
+        "url": "https://api-docs.ecwid.com/reference",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "app": "Gumroad",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://gumroad.com/api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.amazon.com/docs/selling-partner-api/overview.html",
+        "status": 404
+      },
+      {
+        "url": "https://developer.amazon.com/docs/selling-partner-api/getting-started.html",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "total_urls": 0,
+    "broken_urls": 0,
+    "url_checks": []
+  },
+  {
+    "id": 51,
+    "app": "DataForSEO",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.dataforseo.com/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "app": "SE Ranking",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://seranking.com/api",
+        "status": 404
+      },
+      {
+        "url": "https://seranking.com/api-docs",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://ahrefs.com/api",
+        "status": 200
+      },
+      {
+        "url": "https://ahrefs.com/api/reference",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "app": "MrScraper",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.mrscraper.com",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "app": "Apify",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://docs.apify.com/",
+        "status": 200
+      },
+      {
+        "url": "https://api.apify.com/v2/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "app": "Firecrawl",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.firecrawl.dev",
+        "status": 200
+      },
+      {
+        "url": "https://firecrawl.dev",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "app": "Bright Data",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://brightdata.com/docs/api",
+        "status": 200
+      },
+      {
+        "url": "https://brightdata.com/docs/bright-data-api",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "app": "Sherlock",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://github.com/sherlock-project/sherlock",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "app": "Waterfall.io",
+    "total_urls": 0,
+    "broken_urls": 0,
+    "url_checks": []
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://clay.com/developer",
+        "status": 404
+      },
+      {
+        "url": "https://clay.com/docs",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "app": "GitHub",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.github.com/en/rest",
+        "status": 200
+      },
+      {
+        "url": "https://docs.github.com/en/rest/authentication",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://vercel.com/docs/rest-api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "app": "Netlify",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://docs.netlify.com/api/reference/",
+        "status": 404
+      },
+      {
+        "url": "https://docs.netlify.com/api/get-started/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "app": "Cloudflare",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developers.cloudflare.com/api/",
+        "status": 200
+      },
+      {
+        "url": "https://developers.cloudflare.com/fundamentals/api/authentication",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "app": "Supabase",
+    "total_urls": 3,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://supabase.com/docs",
+        "status": 200
+      },
+      {
+        "url": "https://supabase.com/docs/guides/auth",
+        "status": 200
+      },
+      {
+        "url": "https://supabase.com/docs/reference/rest",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "app": "Neo4j",
+    "total_urls": 3,
+    "broken_urls": 3,
+    "url_checks": [
+      {
+        "url": "https://neo4j.com/docs/api/",
+        "status": 404
+      },
+      {
+        "url": "https://neo4j.com/docs/4.4/rest-api/",
+        "status": 404
+      },
+      {
+        "url": "https://neo4j.com/docs/5.18/rest-api/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/api/rest.html",
+        "status": 404
+      },
+      {
+        "url": "https://docs.snowflake.com/en/developer-guide/api/authentication.html",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "app": "MongoDB Atlas",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api/",
+        "status": 200
+      },
+      {
+        "url": "https://www.mongodb.com/docs/atlas/api/data-api/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "app": "Datadog",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.datadoghq.com/api/latest/",
+        "status": 200
+      },
+      {
+        "url": "https://docs.datadoghq.com/api/latest/authentication/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "app": "Sentry",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://docs.sentry.io/api/",
+        "status": 200
+      },
+      {
+        "url": "https://docs.sentry.io/api/graphql/queries/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "app": "Notion",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developers.notion.com/docs",
+        "status": 404
+      },
+      {
+        "url": "https://developers.notion.com/api",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "app": "Airtable",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://airtable.com/developers/docs",
+        "status": 404
+      },
+      {
+        "url": "https://airtable.com/api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "app": "Linear",
+    "total_urls": 3,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.linear.app/overview",
+        "status": 200
+      },
+      {
+        "url": "https://developers.linear.app/authentication",
+        "status": 200
+      },
+      {
+        "url": "https://developers.linear.app/api-reference",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "app": "Jira",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+        "status": 200
+      },
+      {
+        "url": "https://developer.atlassian.com/cloud/jira/platform/authentication/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "app": "Asana",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developers.asana.com/docs/",
+        "status": 200
+      },
+      {
+        "url": "https://developers.asana.com/docs/authentication",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "app": "Monday.com",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developer.monday.com/docs/apis-overview",
+        "status": 200
+      },
+      {
+        "url": "https://developer.monday.com/docs/graphql-api",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "app": "ClickUp",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://clickup.com/api",
+        "status": 200
+      },
+      {
+        "url": "https://clickup.com/developers",
+        "status": 403
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://coda.io/developers/docs",
+        "status": 404
+      },
+      {
+        "url": "https://coda.io/developers/docs/api-reference",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "app": "Smartsheet",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://smartsheet.com/developers",
+        "status": 200
+      },
+      {
+        "url": "https://smartsheet.redoc.ly/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://help.getharvest.com/api-v2/",
+        "status": 200
+      },
+      {
+        "url": "https://help.getharvest.com/api-v2/introduction/overview/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "app": "Stripe",
+    "total_urls": 3,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://stripe.com/docs/api",
+        "status": 200
+      },
+      {
+        "url": "https://stripe.com/docs/auth",
+        "status": 404
+      },
+      {
+        "url": "https://stripe.com/docs/connect",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "app": "Plaid",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://plaid.com/docs/api/",
+        "status": 200
+      },
+      {
+        "url": "https://plaid.com/docs/quickstart/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://binance-docs.github.io/apidocs/spot/en/",
+        "status": 200
+      },
+      {
+        "url": "https://binance-docs.github.io/apidocs/market/en/",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://www.paygent.co.jp",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "app": "QuickBooks",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used",
+        "status": 200
+      },
+      {
+        "url": "https://developer.intuit.com/app/developer/qbo/docs/oauth-2.0",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "app": "Xero",
+    "total_urls": 3,
+    "broken_urls": 3,
+    "url_checks": [
+      {
+        "url": "https://developer.xero.com/docs/api/overview",
+        "status": 404
+      },
+      {
+        "url": "https://developer.xero.com/docs/api/authentication",
+        "status": 404
+      },
+      {
+        "url": "https://developer.xero.com/docs/sdks",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "app": "Brex",
+    "total_urls": 3,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://developer.brex.com/docs",
+        "status": 404
+      },
+      {
+        "url": "https://developer.brex.com/docs/authentication",
+        "status": 200
+      },
+      {
+        "url": "https://developer.brex.com/docs/reference",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "app": "Ramp",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.ramp.com/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "app": "PitchBook",
+    "total_urls": 0,
+    "broken_urls": 0,
+    "url_checks": []
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://help.otter.ai/hc/en-us/articles/360047595311-API",
+        "status": 403
+      },
+      {
+        "url": "https://otter.ai/developer",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "app": "Fathom",
+    "total_urls": 1,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://docs.fathom.video",
+        "status": "FAILED: HTTPSConnectionPool(host='docs.fathom.video', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='docs.fathom.video', port=443): Failed to resolve 'docs.fathom.video' ([Errno 11001] getaddrinfo failed)\"))"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "total_urls": 2,
+    "broken_urls": 2,
+    "url_checks": [
+      {
+        "url": "https://consensus.app",
+        "status": 403
+      },
+      {
+        "url": "https://consensus.app/login",
+        "status": 403
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "app": "Reducto",
+    "total_urls": 2,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://reducto.ai/docs",
+        "status": 200
+      },
+      {
+        "url": "https://docs.reducto.ai",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "app": "Devin",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://docs.devin.ai",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "app": "higgsfield",
+    "total_urls": 2,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://higgsfield.ai/cli",
+        "status": 200
+      },
+      {
+        "url": "https://github.com/higgsfield/cli",
+        "status": 404
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "app": "Mermaid CLI",
+    "total_urls": 3,
+    "broken_urls": 1,
+    "url_checks": [
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli",
+        "status": 200
+      },
+      {
+        "url": "https://github.com/mermaid-js/mermaid-cli/blob/master/README.md",
+        "status": 200
+      },
+      {
+        "url": "https://www.npmjs.com/package/mermaid-cli",
+        "status": 403
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "app": "YouTube Transcript",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://transcriptapi.com/",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "app": "Grain",
+    "total_urls": 1,
+    "broken_urls": 0,
+    "url_checks": [
+      {
+        "url": "https://grain.com",
+        "status": 200
+      }
+    ]
+  }
+]

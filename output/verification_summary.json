@@ -1,0 +1,982 @@
+[
+  {
+    "id": 1,
+    "app": "Salesforce",
+    "total_urls": 6,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 6,
+    "flag": "all_blocked_inconclusive"
+  },
+  {
+    "id": 2,
+    "app": "HubSpot",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 3,
+    "app": "Pipedrive",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 4,
+    "app": "Attio",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 5,
+    "app": "Twenty",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 6,
+    "app": "Podio",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 7,
+    "app": "Zoho CRM",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 8,
+    "app": "Close",
+    "total_urls": 3,
+    "working": 1,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 9,
+    "app": "Copper",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 10,
+    "app": "DealCloud",
+    "total_urls": 1,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 1,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 11,
+    "app": "Zendesk",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 1,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 12,
+    "app": "Intercom",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 13,
+    "app": "Freshdesk",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 14,
+    "app": "Front",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 2,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 15,
+    "app": "Pylon",
+    "total_urls": 0,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "no_evidence_provided"
+  },
+  {
+    "id": 16,
+    "app": "LiveAgent",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 17,
+    "app": "Plain",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 18,
+    "app": "Help Scout",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 19,
+    "app": "Gorgias",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 20,
+    "app": "Gladly",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 21,
+    "app": "Slack",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 22,
+    "app": "Twilio",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 23,
+    "app": "Zoho Cliq",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 25,
+    "app": "Pumble",
+    "total_urls": 0,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "no_evidence_provided"
+  },
+  {
+    "id": 26,
+    "app": "Discord",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 27,
+    "app": "Telegram",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 28,
+    "app": "WhatsApp Business",
+    "total_urls": 3,
+    "working": 3,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 29,
+    "app": "Aircall",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 30,
+    "app": "Vonage",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 31,
+    "app": "Google Ads",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 32,
+    "app": "Meta Ads",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 33,
+    "app": "LinkedIn Ads",
+    "total_urls": 3,
+    "working": 1,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 34,
+    "app": "GoHighLevel",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 35,
+    "app": "Mailchimp",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 36,
+    "app": "Klaviyo",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 37,
+    "app": "systeme.io",
+    "total_urls": 1,
+    "working": 0,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 38,
+    "app": "Pinterest",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 39,
+    "app": "Threads (Meta)",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 40,
+    "app": "SendGrid",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 41,
+    "app": "Shopify",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 42,
+    "app": "WooCommerce",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 43,
+    "app": "BigCommerce",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 1,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "total_urls": 3,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 3,
+    "flag": "all_blocked_inconclusive"
+  },
+  {
+    "id": 45,
+    "app": "Magento (Adobe Commerce)",
+    "total_urls": 3,
+    "working": 1,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 46,
+    "app": "Squarespace",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 47,
+    "app": "Ecwid",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 48,
+    "app": "Gumroad",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 50,
+    "app": "fanbasis",
+    "total_urls": 0,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "no_evidence_provided"
+  },
+  {
+    "id": 51,
+    "app": "DataForSEO",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 52,
+    "app": "SE Ranking",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 53,
+    "app": "Ahrefs",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 54,
+    "app": "MrScraper",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 55,
+    "app": "Apify",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 56,
+    "app": "Firecrawl",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 57,
+    "app": "Bright Data",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 58,
+    "app": "Sherlock",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 59,
+    "app": "Waterfall.io",
+    "total_urls": 0,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "no_evidence_provided"
+  },
+  {
+    "id": 60,
+    "app": "Clay",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 61,
+    "app": "GitHub",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 62,
+    "app": "Vercel",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 63,
+    "app": "Netlify",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 64,
+    "app": "Cloudflare",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 65,
+    "app": "Supabase",
+    "total_urls": 3,
+    "working": 2,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 66,
+    "app": "Neo4j",
+    "total_urls": 3,
+    "working": 0,
+    "dead_404_500": 3,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 68,
+    "app": "MongoDB Atlas",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 69,
+    "app": "Datadog",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 70,
+    "app": "Sentry",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 71,
+    "app": "Notion",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 72,
+    "app": "Airtable",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 73,
+    "app": "Linear",
+    "total_urls": 3,
+    "working": 3,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 74,
+    "app": "Jira",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 75,
+    "app": "Asana",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 76,
+    "app": "Monday.com",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 77,
+    "app": "ClickUp",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 1,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 79,
+    "app": "Smartsheet",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 80,
+    "app": "Harvest",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 81,
+    "app": "Stripe",
+    "total_urls": 3,
+    "working": 2,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 82,
+    "app": "Plaid",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 83,
+    "app": "Binance",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 84,
+    "app": "Paygent Connect",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 86,
+    "app": "QuickBooks",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 87,
+    "app": "Xero",
+    "total_urls": 3,
+    "working": 0,
+    "dead_404_500": 3,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 88,
+    "app": "Brex",
+    "total_urls": 3,
+    "working": 1,
+    "dead_404_500": 2,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 89,
+    "app": "Ramp",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 90,
+    "app": "PitchBook",
+    "total_urls": 0,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "no_evidence_provided"
+  },
+  {
+    "id": 92,
+    "app": "Otter AI",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 1,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 93,
+    "app": "Fathom",
+    "total_urls": 1,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 1,
+    "blocked_403": 0,
+    "flag": "all_links_dead"
+  },
+  {
+    "id": 94,
+    "app": "Consensus",
+    "total_urls": 2,
+    "working": 0,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 2,
+    "flag": "all_blocked_inconclusive"
+  },
+  {
+    "id": 95,
+    "app": "Reducto",
+    "total_urls": 2,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 96,
+    "app": "Devin",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 97,
+    "app": "higgsfield",
+    "total_urls": 2,
+    "working": 1,
+    "dead_404_500": 1,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "some_links_dead"
+  },
+  {
+    "id": 98,
+    "app": "Mermaid CLI",
+    "total_urls": 3,
+    "working": 2,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 1,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 99,
+    "app": "YouTube Transcript",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  },
+  {
+    "id": 100,
+    "app": "Grain",
+    "total_urls": 1,
+    "working": 1,
+    "dead_404_500": 0,
+    "dns_failed": 0,
+    "blocked_403": 0,
+    "flag": "looks_clean"
+  }
+]

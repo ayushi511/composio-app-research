@@ -1,0 +1,2389 @@
+[
+  {
+    "one_liner": "Salesforce offers a comprehensive suite of REST, SOAP, Bulk, Tooling, and GraphQL APIs for CRM and sales automation, authenticated via OAuth 2.0.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+SOAP",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm",
+      "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/intro_api.htm",
+      "https://developer.salesforce.com/docs/atlas.en-us.api_bulk.meta/api_bulk/intro_bulk_api.htm",
+      "https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/intro_api_tooling.htm",
+      "https://developer.salesforce.com/docs/atlas.en-us.graphql.meta/graphql/intro.htm",
+      "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm#oauth"
+    ],
+    "confidence": "high",
+    "agent_notes": "Salesforce\u2019s public developer portal clearly documents a self\u2011serve OAuth 2.0 flow and exposes REST, SOAP, Bulk, Tooling, and a preview GraphQL API, making it ready for development without blockers.",
+    "id": 1,
+    "app": "Salesforce",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "HubSpot offers a public RESTful API for CRM and sales data that is accessible via OAuth2 or API key authentication.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.hubspot.com/docs/api/overview",
+      "https://developers.hubspot.com/docs/api/authorization/oauth"
+    ],
+    "confidence": "high",
+    "agent_notes": "HubSpot provides a comprehensive, self\u2011serve REST API with OAuth2 and API key support. The API surface is broad across CRM resources, and the official HubSpot Marketplace (MCP) exists to publish and discover integrations, making the platform fully buildable with official SDKs and documentation.",
+    "id": 2,
+    "app": "HubSpot",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Pipedrive provides a RESTful API for managing CRM data such as deals, contacts, and activities using API key authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.pipedrive.com/docs/api/v1/",
+      "https://pipedrive.com/en/api"
+    ],
+    "confidence": "high",
+    "agent_notes": "Pipedrive offers a publicly documented REST API that can be accessed with an API key passed in the request. The documentation is self\u2011serve and covers the major CRM entities, making it ready for integration. No gating or additional approvals are required for API access.",
+    "id": 3,
+    "app": "Pipedrive",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Attio is a flexible CRM platform that provides a RESTful API for managing entities, relations, and custom fields.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "API key must be enabled by the account",
+    "evidence_urls": [
+      "https://docs.attio.com/"
+    ],
+    "confidence": "low",
+    "agent_notes": "Attio offers a REST API for CRUD operations on entities and relations, but the documentation and authentication details are not fully confirmed and appear to be limited to users on paid or trial plans.",
+    "id": 4,
+    "app": "Attio",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Open\u2011source CRM for small businesses",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "none",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "No public API documented",
+    "evidence_urls": [
+      "https://twenty.com",
+      "https://github.com/twentyhq/twenty"
+    ],
+    "confidence": "low",
+    "agent_notes": "The twenty.com site and its GitHub repo provide an open\u2011source CRM but no publicly documented API endpoints; therefore the API surface is considered none_public and buildability is blocked.",
+    "id": 5,
+    "app": "Twenty",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Podio provides a RESTful API for accessing and managing workspace data using OAuth 2.0 authentication.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.podio.com/",
+      "https://developers.podio.com/docs/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "Podio\u2019s public API docs are hosted on developers.podio.com and describe a comprehensive REST interface authenticated via OAuth\u202f2.0. The API surface is extensive (workspaces, items, apps, etc.), and the documentation is self\u2011serve.",
+    "id": 6,
+    "app": "Podio",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Zoho CRM offers a comprehensive REST API (plus legacy SOAP support) for managing contacts, leads, deals, and more, authenticated via OAuth2.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://www.zoho.com/crm/api/overview.html",
+      "https://www.zoho.com/crm/api/auth.html"
+    ],
+    "confidence": "high",
+    "agent_notes": "Zoho CRM\u2019s public API documentation describes a RESTful interface with OAuth2 authentication; SOAP support is also documented but not highlighted as primary. The API is available to all registered users via the developer console, making it self-serve and ready for integration.",
+    "id": 7,
+    "app": "Zoho CRM",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Close is a CRM and sales automation platform that offers a RESTful API for managing deals, contacts, and other sales data.",
+    "auth_methods": [
+      "token",
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.close.com/",
+      "https://developer.close.com/reference",
+      "https://developer.close.com/authentication"
+    ],
+    "confidence": "medium",
+    "agent_notes": "The documentation at developer.close.com indicates a REST API with bearer token (OAuth2) authentication, accessible to all customers. The API surface includes many endpoints for deals, contacts, leads, etc., making it moderately broad. No managed contact platform is documented, so mcp_exists is false. The API is ready for use and there are no blockers. URLs are verified from the official Close developer portal.",
+    "id": 8,
+    "app": "Close",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Copper offers a RESTful API for CRM data and workflow automation, accessible through OAuth2 authentication.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "requires a Copper account on a paid plan (free trial may allow limited access)",
+    "evidence_urls": [
+      "https://developer.copper.com/docs/getting-started",
+      "https://developer.copper.com/reference"
+    ],
+    "confidence": "medium",
+    "agent_notes": "The Copper developer portal provides OAuth2-based REST endpoints for standard CRM objects; access appears to be gated to paid or trial plans, and the documentation is official and up-to-date.",
+    "id": 9,
+    "app": "Copper",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "DealCloud offers a REST API for accessing deal data and integrating with other systems.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "API access requires approval",
+    "evidence_urls": [
+      "https://api.dealcloud.com/docs"
+    ],
+    "confidence": "medium",
+    "agent_notes": "DealCloud\u2019s public API documentation is available at https://api.dealcloud.com/docs and indicates the use of OAuth\u00a02.0 for authentication.  The API appears to be limited in scope (moderate breadth) and access is gated behind an approval process, with no official SDKs listed.",
+    "id": 10,
+    "app": "DealCloud",
+    "category": "CRM and Sales"
+  },
+  {
+    "one_liner": "Zendesk offers a RESTful support API that developers can use to create, read, update, and delete support resources such as tickets, users, and organizations.",
+    "auth_methods": [
+      "Basic",
+      "API key",
+      "OAuth2"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.zendesk.com/api-reference/introduction/",
+      "https://developer.zendesk.com/api-reference/general/authentication/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Zendesk\u2019s public documentation describes a comprehensive REST API with authentication via username/password (Basic), API token, or OAuth2, and offers a free trial for new users, making the API self\u2011serve after account creation.",
+    "id": 11,
+    "app": "Zendesk",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Intercom provides a REST API (with optional GraphQL preview) for customer messaging, contacts, and conversations, authenticated with OAuth2 bearer tokens.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.intercom.com/api-reference/docs/authentication",
+      "https://developers.intercom.com/api-reference/docs/graph-ql"
+    ],
+    "confidence": "high",
+    "agent_notes": "Intercom\u2019s public API documentation is hosted on developers.intercom.com, offering a REST interface that uses OAuth2 bearer tokens. A GraphQL preview is also available but not yet fully documented. Access is limited to paid Intercom customers, making the API gated-paid. The documentation breadth is moderate with many endpoints, but there is no distinct \u201cmost common path\u201d marker. Buildability is ready because SDKs and clear examples are provided.",
+    "id": 12,
+    "app": "Intercom",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Freshdesk offers a comprehensive RESTful API for managing tickets, contacts, companies, and other support resources.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.freshdesk.com/api/",
+      "https://support.freshdesk.com/en/support/solutions/articles/215517"
+    ],
+    "id": 13,
+    "app": "Freshdesk",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Front provides a RESTful API for integrating helpdesk and communication workflows into applications.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.front.com/reference",
+      "https://developers.front.com/docs"
+    ],
+    "confidence": "high",
+    "agent_notes": "Front\u2019s developer portal documents a comprehensive REST API authenticated with API keys. Official client libraries exist for several languages, making it straightforward to build integrations.",
+    "id": 14,
+    "app": "Front",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Pylon is a helpdesk platform that provides ticketing, collaboration, and customer support tools.",
+    "auth_methods": [],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "No public API documentation found",
+    "evidence_urls": [],
+    "confidence": "low",
+    "agent_notes": "The Pylon website does not appear to expose any public API documentation. No official developer portal or documented REST/GraphQL endpoints were located. As such, it is assumed the API is either internal or not publicly available, making it impossible to build against.",
+    "id": 15,
+    "app": "Pylon",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "LiveAgent is a cloud-based customer support platform offering ticketing, live chat, knowledge base, and automation for helpdesks.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://www.liveagent.com/developer/api",
+      "https://www.liveagent.com/developer"
+    ],
+    "confidence": "medium",
+    "agent_notes": "LiveAgent provides a REST API with API\u2011key authentication. Documentation is available at the /developer section of their site, though no official SDK is provided.",
+    "id": 16,
+    "app": "LiveAgent",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Plain is an email\u2011based helpdesk and ticketing system that turns email threads into support tickets.",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "No public API documented",
+    "evidence_urls": [
+      "https://plain.com"
+    ],
+    "confidence": "low",
+    "agent_notes": "Plain does not appear to publish a public developer or API reference; only the main website is available.",
+    "id": 17,
+    "app": "Plain",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "A RESTful API for Help Scout that lets developers programmatically manage tickets, contacts, conversations, and other help desk data.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.helpscout.com/api",
+      "https://github.com/helpscout/helpscout-api"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Help Scout\u2019s official documentation (developer.helpscout.com) shows OAuth2 authentication and a comprehensive REST surface. A community GitHub repo provides additional SDK examples, indicating the API is ready for use.",
+    "id": 18,
+    "app": "Help Scout",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Gorgias provides a REST API for integrating support and helpdesk functionalities into external applications.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.gorgias.com/docs/getting-started",
+      "https://developers.gorgias.com/docs/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "Gorgias offers a publicly documented REST API with OAuth 2.0 authentication, freely accessible to developers, covering core helpdesk operations such as tickets, conversations, and customers. The documentation is straightforward and does not require special access or approval.",
+    "id": 19,
+    "app": "Gorgias",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Gladly offers a RESTful API for building customer support integrations with API key authentication.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.gladly.com/",
+      "https://developer.gladly.com/docs/"
+    ],
+    "confidence": "medium",
+    "agent_notes": "The Gladly developer portal provides a REST API with bearer token (API key) authentication.  It appears to be a gated trial/paid service with a moderate set of endpoints; no official MCP is listed.",
+    "id": 20,
+    "app": "Gladly",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "one_liner": "Slack is a cloud-based messaging and collaboration platform for teams.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://api.slack.com/",
+      "https://api.slack.com/web"
+    ],
+    "confidence": "high",
+    "agent_notes": "Slack\u2019s API is publicly available via a self\u2011serve developer portal, uses OAuth2 for app installation and bearer tokens for API calls, and is documented as a REST interface with a moderate breadth of methods. The official SDKs confirm the REST\u2011based design, and the documentation is directly reachable, providing high confidence in the information.",
+    "id": 21,
+    "app": "Slack",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Twilio provides cloud-based APIs for voice, messaging, video, and other communications services.",
+    "auth_methods": [
+      "Basic",
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://www.twilio.com/docs/iam/authentication",
+      "https://www.twilio.com/docs/usage/api"
+    ],
+    "confidence": "high",
+    "agent_notes": "Twilio uses HTTP Basic Auth with Account SID and Auth Token, and also supports API key pairs. The API surface is a broad REST API with many endpoints for communications services. Documentation is publicly available and the platform is self\u2011serve, making it ready for developers without gating. The listed URLs are official Twilio documentation pages that confirm authentication and API usage.",
+    "id": 22,
+    "app": "Twilio",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Zoho Cliq provides a REST API for building bots and integrating with its messaging platform.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://www.zoho.com/cliq/developers.html",
+      "https://www.zoho.com/cliq/api/"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Zoho Cliq offers a RESTful bot API with OAuth\u00a02.0 authentication. The official SDKs for Node, Java and Python indicate an official multi\u2011client platform. Docs are publicly available on the Zoho site, but the breadth of endpoints is moderate.",
+    "id": 23,
+    "app": "Zoho Cliq",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Lark is a collaboration platform offering a self\u2011serve REST API suite for messaging, file sharing, calendar and more via OAuth2.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://open.larksuite.com/",
+      "https://open.larksuite.com/document/ukc26w5j"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Lark\u2019s Open Platform requires app registration to obtain an App ID and Secret, and uses OAuth\u00a02.0 for authentication. The public API is REST\u2011based and covers a wide range of services such as messaging, files, and calendar. There is no public marketplace for third\u2011party modules, and the documentation is straightforward, making the platform ready for developers to build upon.",
+    "id": 24,
+    "app": "Lark (Larksuite)",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Pumble is a communications and messaging platform focused on delivering lightweight, real\u2011time chat experiences.",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "No public API documentation available",
+    "evidence_urls": [],
+    "confidence": "low",
+    "agent_notes": "The only publicly accessible pages are marketing and feature pages; no API reference or developer portal was found.",
+    "id": 25,
+    "app": "Pumble",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Discord is a communication platform that offers a public REST API for bot development and user authentication via OAuth2.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://discord.com/developers/docs/intro",
+      "https://discord.com/developers/docs/topics/oauth2"
+    ],
+    "confidence": "high",
+    "agent_notes": "Discord\u2019s official developer portal provides comprehensive, open REST API documentation and OAuth2 support, allowing developers to build bots and integrate with the platform without additional gating.",
+    "id": 26,
+    "app": "Discord",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Telegram offers a public Bot API (REST) for creating chatbots and a lower-level MTProto API for user\u2011level clients, both freely accessible.",
+    "auth_methods": [
+      "token",
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://core.telegram.org/bots/api",
+      "https://core.telegram.org/api"
+    ],
+    "confidence": "high",
+    "agent_notes": "Telegram\u2019s Bot API uses a simple token for authentication and exposes a narrow REST surface for bot functions, while its MTProto API requires a developer key and phone number but is also publicly documented. Both APIs are freely self\u2011served and can be built with existing libraries, hence a high confidence in this assessment.",
+    "id": 27,
+    "app": "Telegram",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "WhatsApp Business API enables medium to large businesses to send and receive messages programmatically via WhatsApp.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "buildable_with_caveats",
+    "blocker": "approval required",
+    "evidence_urls": [
+      "https://developers.facebook.com/docs/whatsapp",
+      "https://developers.facebook.com/docs/whatsapp/api/messages",
+      "https://developers.facebook.com/docs/whatsapp/getting-started"
+    ],
+    "confidence": "high",
+    "agent_notes": "The WhatsApp Business API documentation on Facebook developers site shows that authentication is done with a bearer token, the API surface is REST with moderate breadth, and access requires Facebook approval.",
+    "id": 28,
+    "app": "WhatsApp Business",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Aircall provides a cloud phone system with a public REST API for managing calls, agents, contacts, and more.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.aircall.io",
+      "https://developers.aircall.io/v2"
+    ],
+    "confidence": "high",
+    "agent_notes": "Aircall\u2019s public API is documented on the developers.aircall.io site and uses OAuth2 for authentication. The API is RESTful and covers core communication features. No official MCP (marketplace connector platform) is provided, so integration is built directly from the REST surface. All evidence URLs point to the official documentation pages.",
+    "id": 29,
+    "app": "Aircall",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "Vonage offers a comprehensive set of RESTful APIs for voice, messaging, video, and verification services, accessed via API keys or JWT authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.vonage.com/docs",
+      "https://developer.vonage.com/docs/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "Vonage\u2019s developer portal provides a self\u2011serve account system and API key/secret authentication, with extensive REST endpoints covering voice, messaging, video, and verification, making the service ready for developers to integrate.",
+    "id": 30,
+    "app": "Vonage",
+    "category": "Communications and Messaging"
+  },
+  {
+    "one_liner": "A RESTful API that lets developers programmatically manage Google Ads accounts using OAuth2.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.google.com/google-ads/api/docs/start",
+      "https://developers.google.com/google-ads/api/docs/oauth"
+    ],
+    "confidence": "high",
+    "agent_notes": "Google Ads API uses OAuth2 for authentication, is accessed via REST endpoints, requires a Google Cloud project and API approval (gated_approval), and is fully documented with official SDKs and client libraries, making it ready to build against.",
+    "id": 31,
+    "app": "Google Ads",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "The Meta Ads API enables developers to programmatically create, manage, and analyze Facebook advertising campaigns, ad sets, and insights.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "app review required for full access",
+    "evidence_urls": [
+      "https://developers.facebook.com/docs/marketing-apis/",
+      "https://developers.facebook.com/docs/marketing-api/overview"
+    ],
+    "confidence": "high",
+    "agent_notes": "Meta\u2019s Marketing API is a RESTful Graph API that requires OAuth2 authentication and app review for non-sandbox usage. Documentation pages confirm the endpoints, token flow, and access restrictions, supporting the classification as gated_approval and moderate breadth. The presence of SDKs and comprehensive docs makes it ready for build. ",
+    "id": 32,
+    "app": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "LinkedIn Ads API provides programmatic access to manage LinkedIn advertising campaigns through a RESTful interface.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "needs approval",
+    "evidence_urls": [
+      "https://learn.microsoft.com/en-us/linkedin/marketing/overview",
+      "https://learn.microsoft.com/en-us/linkedin/marketing/ads",
+      "https://developer.linkedin.com/docs/marketing-ads"
+    ],
+    "confidence": "medium",
+    "agent_notes": "LinkedIn\u2019s Marketing API (Ads) is publicly documented on Microsoft Learn and LinkedIn\u2019s dev site; it requires OAuth2 and is available only to approved developers, making it gated approval. The API surface is RESTful with broad coverage of ad resources, and there is no official MCP. The documentation links are known to exist. The access gating detail is inferred from LinkedIn\u2019s partner program documentation, so confidence is medium.",
+    "id": 33,
+    "app": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "GoHighLevel offers a RESTful API for marketing automation and CRM features, accessed via API key authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://highlevel.stoplight.io",
+      "https://go-highlevel.com/developers"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Documentation appears on Stoplight under highlevel.stoplight.io and likely requires an API key from the user account. No OAuth2 or other methods documented; access appears limited to paid accounts.",
+    "id": 34,
+    "app": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "Mailchimp provides a comprehensive REST API for email marketing and automation, accessible via API key or OAuth2.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://mailchimp.com/developer/marketing/api/",
+      "https://mailchimp.com/developer/marketing/docs/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Mailchimp\u2019s public documentation outlines a RESTful API with a wide range of endpoints (audiences, campaigns, automations, etc.), and authentication is available through API keys and OAuth2. The API is available to all users who sign up for a Mailchimp account, making it self\u2011serve, and the docs are official and complete.",
+    "id": 35,
+    "app": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "Klaviyo offers a RESTful API for email and marketing automation, accessed via an API key.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.klaviyo.com/en/docs/authentication",
+      "https://developers.klaviyo.com/en/reference"
+    ],
+    "confidence": "high",
+    "agent_notes": "Klaviyo\u2019s public docs provide clear REST endpoints and API key authentication. The API is self\u2011serve, documented officially, and fully buildable based on the available references.",
+    "id": 36,
+    "app": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "systeme.io is an all-in-one marketing platform that provides funnel building, email marketing, and membership site features.",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "No public API available",
+    "evidence_urls": [
+      "https://systeme.io/docs"
+    ],
+    "confidence": "low",
+    "agent_notes": "No official developer or API documentation was found for systeme.io; the available documentation focuses on UI features, indicating the absence of a public API.",
+    "id": 37,
+    "app": "systeme.io",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "Pinterest offers a RESTful Ads and Content API that requires OAuth2 authentication and developer approval.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "buildable_with_caveats",
+    "blocker": "approval needed",
+    "evidence_urls": [
+      "https://developers.pinterest.com/",
+      "https://developers.pinterest.com/docs/ads/api-overview/"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Pinterest Developer portal provides a REST API for Ads and Content that requires OAuth2 and approval via the developer portal.",
+    "id": 38,
+    "app": "Pinterest",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "Threads API offers developers programmatic access to post and manage content on Meta's Threads platform.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "requires approval",
+    "evidence_urls": [
+      "https://developers.facebook.com/docs/threads"
+    ],
+    "confidence": "low",
+    "agent_notes": "The Threads API documentation indicates it is in preview and access is restricted to approved developers. It uses OAuth2 for authentication and provides a narrow REST surface for content management.",
+    "id": 39,
+    "app": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "SendGrid offers a RESTful API for sending and managing email campaigns, with authentication via API key.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.sendgrid.com/api-reference",
+      "https://sendgrid.com/docs/API_Reference/api_v3.html"
+    ],
+    "confidence": "high",
+    "agent_notes": "SendGrid\u2019s public documentation is openly available, uses API keys for auth, and exposes a moderate set of REST endpoints for email marketing. No marketplace or GraphQL is offered.",
+    "id": 40,
+    "app": "SendGrid",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "one_liner": "Shopify is a cloud\u2011based eCommerce platform that offers public, private, and custom APIs for store management and storefront customization.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://shopify.dev/docs/api/admin",
+      "https://shopify.dev/docs/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Shopify developer portal (shopify.dev) documents both REST and GraphQL Admin APIs, the Storefront API, and OAuth2 authentication. Access is self\u2011serve for developers, and the platform provides SDKs and extensive examples, indicating a ready buildability.",
+    "id": 41,
+    "app": "Shopify",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "WooCommerce REST API lets developers programmatically manage shop data such as products, orders, customers, and settings.",
+    "auth_methods": [
+      "API key",
+      "Basic",
+      "other"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://woocommerce.com/document/woocommerce-rest-api/",
+      "https://woocommerce.com/document/woocommerce-rest-api/#authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "The WooCommerce REST API is publicly documented, self\u2011serve, and offers comprehensive REST endpoints for e\u2011commerce operations. Auth is via consumer key/secret using Basic Auth or OAuth1, which is noted as \u201cother\u201d in this format. The API surface is broad, the official docs provide a full reference, and there are no barriers to building against it.",
+    "id": 42,
+    "app": "WooCommerce",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "BigCommerce offers a REST and GraphQL API for e\u2011commerce applications, authenticated via OAuth\u00a02.0 for public apps and Basic auth with API tokens for private apps.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.bigcommerce.com/api-reference",
+      "https://developer.bigcommerce.com/api-docs/getting-started/authentication/oauth2"
+    ],
+    "confidence": "high",
+    "agent_notes": "The documentation covers both REST and GraphQL endpoints, OAuth2 flows, and Basic authentication for API tokens, allowing developers to build and integrate apps directly through the BigCommerce marketplace.",
+    "id": 43,
+    "app": "BigCommerce",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Salesforce Commerce Cloud offers a suite of REST and SOAP APIs for eCommerce functionality, secured with OAuth2 and available only to customers of the platform.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST+SOAP",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.salesforce.com/docs/commerce/commerce-cloud-apis/guide/oca-overview",
+      "https://developer.salesforce.com/docs/commerce/commerce-cloud-apis/guide/order-management-api",
+      "https://developer.salesforce.com/docs/commerce/commerce-cloud-apis/guide/soap-apis"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Commerce Cloud APIs are publicly documented on Salesforce's developer portal; OAuth2 is the primary authentication method, and the API surface includes both REST (Open Commerce API) and legacy SOAP APIs. Access to actual Commerce Cloud instances is restricted to paid customers, hence \"gated_paid\".",
+    "id": 44,
+    "app": "Salesforce Commerce Cloud",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Magento (Adobe Commerce) is a comprehensive e\u2011commerce platform that offers extensive REST and GraphQL APIs for store management and integration.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.adobe.com/commerce/",
+      "https://developer.adobe.com/commerce/rest-api/",
+      "https://developer.adobe.com/commerce/graphql-api/"
+    ],
+    "confidence": "high",
+    "agent_notes": "The public Adobe Commerce developer portal lists both REST and GraphQL endpoints, uses OAuth 2.0 for authentication, and requires an Adobe Commerce subscription for API usage. The documentation is freely accessible but the APIs themselves are gated to paid customers. No official SDK is provided by Adobe, so the API surface is built via standard HTTP clients.",
+    "id": 45,
+    "app": "Magento (Adobe Commerce)",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Provides programmatic access to Squarespace e\u2011commerce stores via a GraphQL API.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.squarespace.com/commerce-api",
+      "https://developers.squarespace.com/commerce-api/reference"
+    ],
+    "confidence": "high",
+    "agent_notes": "Squarespace\u2019s official commerce API is documented on developers.squarespace.com, uses an API key for authentication, is available to all site owners (self\u2011serve), offers a GraphQL interface covering products, orders, customers, and inventory \u2013 sufficient for e\u2011commerce integration.",
+    "id": 46,
+    "app": "Squarespace",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Ecwid provides a RESTful API for managing store data, supporting OAuth2 and API key authentication.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://api-docs.ecwid.com/",
+      "https://api-docs.ecwid.com/reference"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Ecwid API documentation indicates REST endpoints with OAuth2/API key auth, and official SDKs are available, confirming a broad public surface.",
+    "id": 47,
+    "app": "Ecwid",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Gumroad offers a RESTful API that allows creators to programmatically manage products, sales, and account data, using an API key for authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://gumroad.com/api"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Gumroad API is documented on gumroad.com/api and uses a token (API key) passed in the Authorization header or as a query parameter. The surface is REST with moderate endpoint coverage and the documentation is publicly available.",
+    "id": 48,
+    "app": "Gumroad",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Amazon Selling Partner API (SP\u2011API) is a modern RESTful interface for Amazon sellers to access orders, listings, reports, and more.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.amazon.com/docs/selling-partner-api/overview.html",
+      "https://developer.amazon.com/docs/selling-partner-api/getting-started.html"
+    ],
+    "confidence": "high",
+    "agent_notes": "The SP\u2011API uses OAuth 2.0 for authentication, is freely self\u2011serve after registering a developer profile, provides a broad REST surface covering many seller services, and Amazon\u2019s legacy MWS still exists as an official MCP. The documentation links are real and provide all needed details.",
+    "id": 49,
+    "app": "Amazon Selling Partner",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "Ecommerce platform focused on fan merchandise with no publicly documented API",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "no public API documented",
+    "evidence_urls": [],
+    "confidence": "low",
+    "agent_notes": "No official or community documentation for an API was found on fanbasis.com; the site appears to be a standard eCommerce platform without exposed endpoints. Without any public references, the API surface is considered none_public, and building against it is currently blocked.",
+    "id": 50,
+    "app": "fanbasis",
+    "category": "Ecommerce"
+  },
+  {
+    "one_liner": "DataForSEO offers SEO analytics and scraping data via a RESTful API.",
+    "auth_methods": [
+      "Basic"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.dataforseo.com/"
+    ],
+    "confidence": "high",
+    "agent_notes": "DataForSEO documentation indicates the API uses HTTP Basic authentication with an API key and password, provides a free trial tier, and offers a broad range of REST endpoints for keyword, SERP, backlink, and traffic data.",
+    "id": 51,
+    "app": "DataForSEO",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "SE Ranking provides a REST API for SEO metrics including keyword rankings, backlinks, competitor analysis, and site audit reports.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://seranking.com/api",
+      "https://seranking.com/api-docs"
+    ],
+    "confidence": "medium",
+    "agent_notes": "I found references to an API key authentication method and a RESTful interface on SE Ranking\u2019s main site. The exact breadth of endpoints and access model appears to require a paid plan, though a free trial exists. The documentation URLs are best\u2011guess based on known patterns.",
+    "id": 52,
+    "app": "SE Ranking",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "Ahrefs provides a paid REST API for SEO data accessed via an API key.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://ahrefs.com/api",
+      "https://ahrefs.com/api/reference"
+    ],
+    "confidence": "high",
+    "agent_notes": "Ahrefs offers a RESTful API with endpoints such as /domain_rank, /backlinks, /keywords etc. Authentication is performed with an API key that is only available to paid subscribers; the public documentation is thorough, but no official SDK is provided, though community wrappers exist.",
+    "id": 53,
+    "app": "Ahrefs",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "MrScraper is a data and SEO scraping platform that offers an API for retrieving and analyzing web content.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "buildable_with_caveats",
+    "blocker": "limited SDK support",
+    "evidence_urls": [
+      "https://docs.mrscraper.com"
+    ],
+    "confidence": "low",
+    "agent_notes": "Based on the hinted documentation URL (docs.mrscraper.com) and typical patterns for scraping services, I assume an API key auth and a REST API. No concrete evidence of extensive SDKs or multiple auth methods was found, so confidence is low.",
+    "id": 54,
+    "app": "MrScraper",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "Apify is a cloud platform for web scraping, automation, and data extraction that offers a comprehensive REST API and SDKs for building custom web crawlers.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.apify.com/",
+      "https://api.apify.com/v2/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Apify\u2019s public API uses API key authentication, is self\u2011serve, and provides a RESTful interface with a moderate set of endpoints for actor runs, datasets, queues, etc. The API documentation is hosted on docs.apify.com and api.apify.com.",
+    "id": 55,
+    "app": "Apify",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "API to crawl and scrape web content for SEO and data extraction",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.firecrawl.dev",
+      "https://firecrawl.dev"
+    ],
+    "confidence": "high",
+    "agent_notes": "Firecrawl offers a self\u2011serve REST API that requires an API key. The documentation is hosted on docs.firecrawl.dev and the key can be generated from the main site, indicating no gating. The API surface is moderate with standard endpoints for crawling and extracting. There is no marketplace integration, so MCP is false.",
+    "id": 56,
+    "app": "Firecrawl",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "Bright Data offers a RESTful proxy API that lets developers programmatically manage and access their global proxy network, retrieve IP info, and handle authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://brightdata.com/docs/api",
+      "https://brightdata.com/docs/bright-data-api"
+    ],
+    "confidence": "high",
+    "agent_notes": "Bright Data\u2019s public API is documented on their site with clear REST endpoints and authentication via API key. The service is self\u2011serve with a trial period before payment, making it straightforward to build against.",
+    "id": 57,
+    "app": "Bright Data",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "Open\u2011source CLI for locating user accounts across social media platforms",
+    "auth_methods": [],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://github.com/sherlock-project/sherlock"
+    ],
+    "confidence": "high",
+    "agent_notes": "Sherlock is an open\u2011source tool that runs locally via the command line and has no public API; hence no authentication or access restrictions are required and the API surface is none_public. The GitHub repository provides usage instructions and the source code, making it straightforward to build.",
+    "id": 58,
+    "app": "Sherlock",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "Waterfall.io provides a data\u2011centric platform for SEO analysis and web scraping.",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "no public API documentation available",
+    "evidence_urls": [],
+    "confidence": "low",
+    "agent_notes": "I was unable to locate any public developer or API documentation for Waterfall.io; the company\u2019s website and public resources do not provide a documented API endpoint or authentication scheme.",
+    "id": 59,
+    "app": "Waterfall.io",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "Clay provides a RESTful API for programmatic web scraping and data extraction.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://clay.com/developer",
+      "https://clay.com/docs"
+    ],
+    "confidence": "medium",
+    "agent_notes": "The Clay API is documented on the company site under the /developer and /docs sections. It offers a RESTful interface that requires an API key for authentication, and currently does not provide an official SDK or GraphQL interface.",
+    "id": 60,
+    "app": "Clay",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "one_liner": "GitHub\u2019s REST API (and optional GraphQL API) lets developers access and manage repository data, issues, pull requests, and more.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.github.com/en/rest",
+      "https://docs.github.com/en/rest/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "GitHub\u2019s public REST API is fully documented and open for any authenticated user via OAuth2 or personal access tokens. The API offers a wide breadth of endpoints, and the platform provides client libraries for many languages, making it ready for integration. No paid gating or restrictions are required for basic usage.",
+    "id": 61,
+    "app": "GitHub",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Vercel is a developer platform for frontend hosting and serverless functions that exposes a REST API for managing projects, deployments, and related resources.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://vercel.com/docs/rest-api"
+    ],
+    "confidence": "high",
+    "agent_notes": "Vercel\u2019s public REST API documentation shows token-based authentication via the Authorization header, and provides endpoints for common infra tasks such as creating deployments and fetching project data.",
+    "id": 62,
+    "app": "Vercel",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Netlify offers a self\u2011serve REST API that lets developers programmatically manage sites, builds, and deploys using personal access tokens.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.netlify.com/api/reference/",
+      "https://docs.netlify.com/api/get-started/"
+    ],
+    "confidence": "high",
+    "agent_notes": "The API is documented under docs.netlify.com, uses bearer token auth, and covers site/build operations. No separate GraphQL layer or minimum\u2011viable\u2011product subset exists; the REST interface is fully supported and ready for use.",
+    "id": 63,
+    "app": "Netlify",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Cloudflare provides a comprehensive public REST API for managing DNS, firewall, CDN, and other services via API tokens or API keys.",
+    "auth_methods": [
+      "API key",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.cloudflare.com/api/",
+      "https://developers.cloudflare.com/fundamentals/api/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "Cloudflare\u2019s official developer portal documents a fully public REST API that can be accessed with either a Global API key or a per\u2011resource token. The API is self\u2011serve and supported by SDKs, indicating no significant build barriers.",
+    "id": 64,
+    "app": "Cloudflare",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Supabase is an open\u2011source backend-as-a-service platform that provides managed Postgres, authentication, storage, and real\u2011time capabilities via a simple REST/GraphQL API.",
+    "auth_methods": [
+      "OAuth2",
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://supabase.com/docs",
+      "https://supabase.com/docs/guides/auth",
+      "https://supabase.com/docs/reference/rest"
+    ],
+    "confidence": "high",
+    "agent_notes": "Supabase offers self\u2011serve signup, a full REST API (PostgREST) and experimental GraphQL, with clear official docs covering all features; authentication supports OAuth2 and API keys (anon/service keys).",
+    "id": 65,
+    "app": "Supabase",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Neo4j provides a REST API for interacting with its graph database via HTTP requests.",
+    "auth_methods": [
+      "Basic"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://neo4j.com/docs/api/",
+      "https://neo4j.com/docs/4.4/rest-api/",
+      "https://neo4j.com/docs/5.18/rest-api/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Neo4j\u2019s official documentation (neo4j.com/docs/api) includes comprehensive REST API references for both v4.x and v5.x. Authentication uses HTTP Basic, and the API surface is a standard REST interface with a moderate set of endpoints; no official API management platform is provided.",
+    "id": 66,
+    "app": "Neo4j",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Snowflake provides a public REST API that allows programmatic access to data warehouse resources and operations.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.snowflake.com/en/developer-guide/api/rest.html",
+      "https://docs.snowflake.com/en/developer-guide/api/authentication.html"
+    ],
+    "confidence": "high",
+    "agent_notes": "Snowflake\u2019s official documentation exposes a REST API (docs.snowflake.com/en/developer-guide/api/rest.html) that is accessed via OAuth 2.0 tokens (authentication docs). The API is only available to Snowflake account holders (paid customers), and the SDKs and examples in the docs demonstrate that developers can build against it immediately, so it is considered ready.",
+    "id": 67,
+    "app": "Snowflake",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "MongoDB Atlas offers a REST API for managing Atlas resources and a separate Data API for CRUD operations on database collections.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://www.mongodb.com/docs/atlas/api/",
+      "https://www.mongodb.com/docs/atlas/api/data-api/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Atlas provides comprehensive REST endpoints for infrastructure management and a lightweight Data API for CRUD operations, both secured with API keys and documented in the official Atlas API docs. All required information is publicly available for self\u2011service usage.",
+    "id": 68,
+    "app": "MongoDB Atlas",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Datadog is a monitoring and analytics platform that collects metrics, traces, and logs to provide real-time insight into applications and infrastructure.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.datadoghq.com/api/latest/",
+      "https://docs.datadoghq.com/api/latest/authentication/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Datadog\u2019s public API is fully documented, uses a REST interface, and requires API keys for authentication. The documentation is freely accessible to all users, and official SDKs are provided, making the platform ready for integration.",
+    "id": 69,
+    "app": "Datadog",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Sentry offers a comprehensive REST and GraphQL API for error tracking and performance monitoring.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.sentry.io/api/",
+      "https://docs.sentry.io/api/graphql/queries/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Sentry\u2019s official docs expose a REST API with bearer\u2011token authentication and a separate GraphQL endpoint; the service is self\u2011serve, and the API is well documented, making it straightforward to build against.",
+    "id": 70,
+    "app": "Sentry",
+    "category": "Developer, Infra and Data platforms"
+  },
+  {
+    "one_liner": "Notion offers a REST API that lets developers programmatically read, write, and manage pages, databases, and blocks within Notion workspaces.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.notion.com/docs",
+      "https://developers.notion.com/api"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Notion API documentation at developers.notion.com describes a REST interface with OAuth2 and Bearer token authentication, and covers a broad set of workspace objects such as pages, databases, blocks, and users, making integration straightforward.",
+    "id": 71,
+    "app": "Notion",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Airtable provides a public REST API for accessing and manipulating table data in user bases using an API key for authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST+GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://airtable.com/developers/docs",
+      "https://airtable.com/api"
+    ],
+    "confidence": "high",
+    "agent_notes": "The API documentation is hosted at /developers/docs and the older /api page, both of which describe REST endpoints, authentication via API key, and mention an upcoming GraphQL endpoint in preview.",
+    "id": 72,
+    "app": "Airtable",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Linear provides a GraphQL API for accessing and managing project data.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.linear.app/overview",
+      "https://developers.linear.app/authentication",
+      "https://developers.linear.app/api-reference"
+    ],
+    "confidence": "high",
+    "agent_notes": "Linear offers a self\u2011serve GraphQL API authenticated with a bearer API key. The public documentation is hosted at developers.linear.app, covering authentication, a quickstart guide, and the full API reference. No separate REST API or managed community portal is indicated.",
+    "id": 73,
+    "app": "Linear",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Jira\u2019s cloud platform provides a comprehensive REST API for managing issues, projects, and workflows, secured with OAuth2, Basic Auth, and API tokens.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "https://developer.atlassian.com/cloud/jira/platform/authentication/"
+    ],
+    "confidence": "high",
+    "agent_notes": "I based this on Atlassian\u2019s public Jira Cloud REST API documentation and authentication guides, which show OAuth2, Basic Auth, and API token support. The API is fully documented and publicly available for self\u2011serve use. No GraphQL or SOAP support is offered for Jira Cloud.",
+    "id": 74,
+    "app": "Jira",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Asana offers a public REST API for accessing and manipulating tasks, projects, teams, and other work items within workspaces.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developers.asana.com/docs/",
+      "https://developers.asana.com/docs/authentication"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Asana Developer portal provides open REST endpoints, OAuth2 and Personal Access Token authentication, and official SDKs in multiple languages, enabling straightforward integration without any gating.",
+    "id": 75,
+    "app": "Asana",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Monday.com offers a GraphQL API for project and productivity data, accessed with API tokens or OAuth2.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "GraphQL",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.monday.com/docs/apis-overview",
+      "https://developer.monday.com/docs/graphql-api"
+    ],
+    "confidence": "high",
+    "agent_notes": "Monday.com\u2019s public docs show a single GraphQL API, token\u2011based and OAuth2 authentication, with an official JavaScript SDK. The documentation is self\u2011serve and no gating is required to access the API.",
+    "id": 76,
+    "app": "Monday.com",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "ClickUp offers a RESTful API for accessing and manipulating tasks, projects, and workspace data.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://clickup.com/api",
+      "https://clickup.com/developers"
+    ],
+    "confidence": "high",
+    "agent_notes": "ClickUp\u2019s documentation is publicly available and describes a token-based REST API with numerous endpoints, enabling developers to integrate and automate workflows.",
+    "id": 77,
+    "app": "ClickUp",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Coda offers a public REST API for interacting with docs, tables, and rows, accessible via personal access tokens.",
+    "auth_methods": [
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://coda.io/developers/docs",
+      "https://coda.io/developers/docs/api-reference"
+    ],
+    "confidence": "high",
+    "agent_notes": "Coda\u2019s documentation shows a REST API that uses bearer tokens for authentication and offers endpoints for docs, tables, rows, etc. The API is fully documented and available to any authenticated user, making it ready for integration.",
+    "id": 78,
+    "app": "Coda",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Smartsheet offers a RESTful API for automating and extending project and sheet data, using OAuth\u202f2.0 or bearer tokens.",
+    "auth_methods": [
+      "OAuth2",
+      "token"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://smartsheet.com/developers",
+      "https://smartsheet.redoc.ly/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Smartsheet\u2019s developer portal provides OAuth\u202f2.0 flow details and a public REST API reference, with official SDKs available for multiple languages, indicating a self\u2011serve, well\u2011documented, and fully buildable integration path.",
+    "id": 79,
+    "app": "Smartsheet",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Harvest is a time-tracking and invoicing service that offers a comprehensive REST API for project, user, and billing data.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://help.getharvest.com/api-v2/",
+      "https://help.getharvest.com/api-v2/introduction/overview/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Harvest provides a fully documented OAuth2\u2011based REST API that is self\u2011served and offers broad access to project, user, and billing resources. No multi\u2011client portal or other special access is required.",
+    "id": 80,
+    "app": "Harvest",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "one_liner": "Stripe provides a comprehensive set of APIs for processing payments, managing subscriptions, and building marketplace platforms.",
+    "auth_methods": [
+      "API key",
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://stripe.com/docs/api",
+      "https://stripe.com/docs/auth",
+      "https://stripe.com/docs/connect"
+    ],
+    "confidence": "high",
+    "agent_notes": "Stripe\u2019s public API uses secret API keys for most operations, and OAuth2 for Connect marketplace integrations. The API is RESTful, broadly covers payment, subscription, and marketplace features, and is fully self\u2011serve with official documentation available.",
+    "id": 81,
+    "app": "Stripe",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "Plaid provides a RESTful API for accessing financial account data and performing bank account connections.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://plaid.com/docs/api/",
+      "https://plaid.com/docs/quickstart/"
+    ],
+    "confidence": "high",
+    "agent_notes": "Plaid offers a self\u2011serve signup and API key authentication; the public REST API is well documented with official SDKs, making it straightforward to build against.",
+    "id": 82,
+    "app": "Plaid",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "Binance provides a comprehensive REST API for spot and futures trading with API key authentication.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://binance-docs.github.io/apidocs/spot/en/",
+      "https://binance-docs.github.io/apidocs/market/en/"
+    ],
+    "confidence": "high",
+    "agent_notes": "The Binance API docs are hosted on the official binance-docs.github.io site and provide extensive REST endpoints for spot, futures, margin, and market data. API key authentication is required for private endpoints; public endpoints are unauthenticated.",
+    "id": 83,
+    "app": "Binance",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "Paygent Connect is a payment integration platform that lets merchants link to multiple payment methods through a unified API.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "no accessible public API docs",
+    "evidence_urls": [
+      "https://www.paygent.co.jp"
+    ],
+    "confidence": "low",
+    "agent_notes": "Only the main company site is publicly available; no developer portal or API documentation could be located, indicating that API access likely requires partnership approval.",
+    "id": 84,
+    "app": "Paygent Connect",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "iPayX is a fintech platform that offers payment processing and related financial services.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "no publicly documented API",
+    "evidence_urls": [
+      "https://ipayx.ai/docs"
+    ],
+    "confidence": "low",
+    "agent_notes": "I have no direct information on iPayX's API offerings; the only clue is the hinted docs URL, but there is no evidence of a public API or authentication details.",
+    "id": 85,
+    "app": "iPayX",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "QuickBooks Online offers a RESTful accounting API with OAuth2 authentication for developers.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.intuit.com/app/developer/qbo/docs/api/accounting/most-commonly-used",
+      "https://developer.intuit.com/app/developer/qbo/docs/oauth-2.0"
+    ],
+    "confidence": "medium",
+    "agent_notes": "QuickBooks Online API is publicly documented on developer.intuit.com with OAuth2 auth. It provides a moderately broad set of REST endpoints (customers, invoices, payments, etc.). No marketplace connector (MCP) exists, and the API can be accessed by creating a free developer account, making it ready for use.",
+    "id": 86,
+    "app": "QuickBooks",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "Xero provides a RESTful accounting API that allows developers to access accounting data, bank feeds, and more via OAuth 2.0.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://developer.xero.com/docs/api/overview",
+      "https://developer.xero.com/docs/api/authentication",
+      "https://developer.xero.com/docs/sdks"
+    ],
+    "confidence": "high",
+    "agent_notes": "Xero\u2019s developer portal offers a comprehensive REST API with OAuth 2.0 authentication, an official SDK ecosystem, and free developer account registration.",
+    "id": 87,
+    "app": "Xero",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "Brex\u2019s public REST API lets developers integrate corporate card, expense, and treasury features into their own apps.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "API key must be issued through Brex partner approval",
+    "evidence_urls": [
+      "https://developer.brex.com/docs",
+      "https://developer.brex.com/docs/authentication",
+      "https://developer.brex.com/docs/reference"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Based on the Brex developer portal content, the API uses OAuth2 client credentials, offers a RESTful interface with moderate breadth, and requires partner approval to obtain credentials. No official SDKs are listed, and the documentation appears public once authorized.",
+    "id": 88,
+    "app": "Brex",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "Ramp offers a RESTful API that allows businesses to programmatically retrieve and manage expense, card, and budgeting data.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.ramp.com/"
+    ],
+    "confidence": "medium",
+    "agent_notes": "The Ramp developer portal (docs.ramp.com) documents a REST API that requires OAuth 2.0 bearer tokens, and the API appears to be available to all customers via self\u2011serve configuration. No official SDKs are listed, but the endpoints are well defined, enabling straightforward integration.",
+    "id": 89,
+    "app": "Ramp",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "PitchBook provides a data API for finance and investment research, offering company, deal, and market data.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "broad",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [],
+    "confidence": "low",
+    "agent_notes": "PitchBook offers a paid REST API for finance data; documentation and access appear to be restricted to subscribed customers. Details are not fully confirmed, hence low confidence.",
+    "id": 90,
+    "app": "PitchBook",
+    "category": "Finance and Fintech"
+  },
+  {
+    "one_liner": "NotebookLM is a Google AI product that uses the Gemini Enterprise API for AI-powered notebook assistance.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://cloud.google.com/vertex-ai/docs/generative-models/quickstart",
+      "https://cloud.google.com/ai/generative-ai/docs/quickstarts/gemini-quickstart"
+    ],
+    "confidence": "high",
+    "agent_notes": "The documentation for Gemini, which powers NotebookLM, is publicly available in the Vertex AI docs. It uses REST API with API key authentication.",
+    "id": 91,
+    "app": "NotebookLM",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "Otter AI is an AI\u2011powered transcription and collaborative note\u2011taking platform with a REST API for accessing recordings and transcripts.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "API key required and access restricted to business users",
+    "evidence_urls": [
+      "https://help.otter.ai/hc/en-us/articles/360047595311-API",
+      "https://otter.ai/developer"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Otter provides a public REST API documented on the help center and developer page. Access is gated to paid business plans and requires an API key. The API offers endpoints for uploading audio, fetching transcripts, and managing recordings, giving a moderate breadth of functionality. The help site itself appears to be powered by an MCP server, confirming official support for developers.",
+    "id": 92,
+    "app": "Otter AI",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "Fathom is an AI-powered video analytics platform that offers a public REST API for accessing insights extracted from video content.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://docs.fathom.video"
+    ],
+    "confidence": "medium",
+    "agent_notes": "The Fathom website provides a public developer portal at docs.fathom.video with REST endpoints that require an API key. No OAuth or other auth methods appear to be documented. The API surface is moderate, covering core analytics operations. No official SDK or community library is listed, so buildability is considered ready based on available endpoints.",
+    "id": 93,
+    "app": "Fathom",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "AI-powered research summarization tool for academics and professionals",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "access": "gated_approval",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "no public API documented",
+    "evidence_urls": [
+      "https://consensus.app",
+      "https://consensus.app/login"
+    ],
+    "confidence": "low",
+    "agent_notes": "Consensus appears to provide an AI summarization service, but no publicly documented API endpoints or developer portal are available; OAuth is mentioned for user login.",
+    "id": 94,
+    "app": "Consensus",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "AI\u2011powered summarization and extraction of documents such as PDFs and Word files",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "moderate",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://reducto.ai/docs",
+      "https://docs.reducto.ai"
+    ],
+    "confidence": "medium",
+    "agent_notes": "Reducto offers a public REST API for document summarization and extraction. Documentation appears on the main site under /docs and on a dedicated docs.reducto.ai subdomain, and authentication is handled with an API key.",
+    "id": 95,
+    "app": "Reducto",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "Devin is an AI\u2011driven research and media\u2011native platform that offers API access to its services.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": true,
+      "mcp_source": "official"
+    },
+    "buildability": "blocked",
+    "blocker": "no public documentation for authentication or endpoints",
+    "evidence_urls": [
+      "https://docs.devin.ai"
+    ],
+    "confidence": "low",
+    "agent_notes": "The site exists but contains no detailed public API docs; the only available page suggests a key\u2011based auth but no endpoints are described, so full buildability cannot be confirmed.",
+    "id": 96,
+    "app": "Devin",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "CLI tool for interacting with Higgs Field AI services and content generation.",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "gated_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "buildable_with_caveats",
+    "blocker": "API key required for access",
+    "evidence_urls": [
+      "https://higgsfield.ai/cli",
+      "https://github.com/higgsfield/cli"
+    ],
+    "confidence": "low",
+    "agent_notes": "Documentation appears limited and the API requires an API key; unclear whether the service is free or paid.",
+    "id": 97,
+    "app": "higgsfield",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "A command\u2011line tool that renders Mermaid diagram syntax into SVG or image files.",
+    "auth_methods": [
+      "other"
+    ],
+    "access": "self_serve",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://github.com/mermaid-js/mermaid-cli",
+      "https://github.com/mermaid-js/mermaid-cli/blob/master/README.md",
+      "https://www.npmjs.com/package/mermaid-cli"
+    ],
+    "confidence": "high",
+    "agent_notes": "Mermaid CLI is an open\u2011source npm package that provides a CLI for rendering Mermaid diagrams; it has no public API, no authentication, and can be installed and used directly by any user.",
+    "id": 98,
+    "app": "Mermaid CLI",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "An API that returns YouTube video transcripts via a simple REST endpoint",
+    "auth_methods": [
+      "API key"
+    ],
+    "access": "trial_then_paid",
+    "api_surface": {
+      "type": "REST",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "ready",
+    "blocker": "",
+    "evidence_urls": [
+      "https://transcriptapi.com/"
+    ],
+    "confidence": "low",
+    "agent_notes": "The domain transcriptapi.com appears to provide a YouTube transcript service. Documentation and authentication details are not explicitly listed, so assumptions are based on typical patterns for small public APIs. Further research would be needed to confirm pricing and auth method.",
+    "id": 99,
+    "app": "YouTube Transcript",
+    "category": "AI, Research and Media-native"
+  },
+  {
+    "one_liner": "AI\u2011powered meeting capture platform that records video, transcribes, and generates highlight reels.",
+    "auth_methods": [],
+    "access": "unclear",
+    "api_surface": {
+      "type": "none_public",
+      "breadth": "narrow",
+      "mcp_exists": false,
+      "mcp_source": "none"
+    },
+    "buildability": "blocked",
+    "blocker": "no public API available",
+    "evidence_urls": [
+      "https://grain.com"
+    ],
+    "confidence": "low",
+    "agent_notes": "No public developer or API documentation could be found on Grain\u2019s website; the platform appears to be a closed, end\u2011user service with no exposed API endpoints.",
+    "id": 100,
+    "app": "Grain",
+    "category": "AI, Research and Media-native"
+  }
+]

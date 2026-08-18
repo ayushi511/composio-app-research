@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case File No. 100 — Agent Toolkit Feasibility Audit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE7D9;
+    --paper-dark:#E2DAC7;
+    --card:#F5F1E6;
+    --ink:#1E2A3A;
+    --ink-soft:#5B6472;
+    --rule:#C9BFA0;
+    --stamp-red:#A6352C;
+    --stamp-red-dark:#7E2721;
+    --verified-teal:#2F6B5E;
+    --amber:#B8862B;
+    --redact:#14181D;
+    --shadow: 0 1px 0 rgba(30,42,58,0.06);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  a{color:var(--stamp-red); text-decoration-thickness:1px;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .display{font-family:'Fraunces', serif;}
+
+  /* ===== MASTHEAD ===== */
+  .masthead{
+    border-bottom:3px double var(--ink);
+    padding:36px 0 22px;
+    position:relative;
+  }
+  .masthead .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .masthead h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(34px, 5.4vw, 58px);
+    line-height:1.03;
+    margin:0 0 10px;
+    letter-spacing:-0.01em;
+  }
+  .masthead h1 em{font-style:italic; font-weight:500; color:var(--stamp-red);}
+  .masthead .sub{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0;
+  }
+  .stamp-corner{
+    position:absolute;
+    top:30px; right:28px;
+    border:3px solid var(--stamp-red);
+    color:var(--stamp-red);
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    padding:8px 12px;
+    transform:rotate(6deg);
+    border-radius:3px;
+    opacity:0.9;
+    white-space:nowrap;
+  }
+  @media (max-width:640px){ .stamp-corner{display:none;} }
+
+  /* ===== SECTION SCAFFOLD ===== */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--rule);}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--stamp-red);
+    margin-bottom:10px;
+    font-weight:600;
+  }
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-size:clamp(24px, 3.4vw, 34px);
+    font-weight:600;
+    margin:0 0 26px;
+    letter-spacing:-0.01em;
+  }
+
+  /* ===== BRIEFING STATS ===== */
+  .briefing-lede{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(19px,2.4vw,24px);
+    line-height:1.5;
+    max-width:760px;
+    margin:0 0 34px;
+    color:var(--ink);
+  }
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  @media (max-width:760px){ .stat-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:460px){ .stat-grid{grid-template-columns:1fr;} }
+  .stat-cell{
+    background:var(--card);
+    padding:24px 20px;
+  }
+  .stat-num{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:40px;
+    line-height:1;
+    color:var(--ink);
+  }
+  .stat-num.red{color:var(--stamp-red);}
+  .stat-num.teal{color:var(--verified-teal);}
+  .stat-label{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:8px;
+    line-height:1.4;
+  }
+
+  .finding-list{
+    margin:34px 0 0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:14px;
+  }
+  .finding-list li{
+    display:flex;
+    gap:14px;
+    align-items:baseline;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--rule);
+    font-size:15px;
+  }
+  .finding-list li:last-child{border-bottom:none; padding-bottom:0;}
+  .finding-num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--stamp-red);
+    font-weight:600;
+    flex-shrink:0;
+    width:22px;
+  }
+  .finding-list strong{font-weight:600;}
+
+  /* ===== FILTER BAR ===== */
+  .filter-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:22px;
+    align-items:center;
+  }
+  .filter-bar input[type="text"]{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13.5px;
+    padding:9px 12px;
+    border:1px solid var(--ink);
+    background:var(--card);
+    color:var(--ink);
+    border-radius:2px;
+    min-width:200px;
+    flex:1 1 200px;
+  }
+  .filter-bar select{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    padding:9px 10px;
+    border:1px solid var(--ink);
+    background:var(--card);
+    color:var(--ink);
+    border-radius:2px;
+  }
+  .filter-count{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    margin-left:auto;
+  }
+
+  /* ===== TABLE / DOSSIER CARDS ===== */
+  .dossier-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+  }
+  .dossier-table thead th{
+    text-align:left;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding:0 10px 10px;
+    border-bottom:2px solid var(--ink);
+    cursor:pointer;
+    user-select:none;
+    white-space:nowrap;
+  }
+  .dossier-table thead th:hover{color:var(--stamp-red);}
+  .dossier-table tbody tr{
+    border-bottom:1px solid var(--rule);
+  }
+  .dossier-table tbody tr:hover{background:var(--card);}
+  .dossier-table td{
+    padding:12px 10px;
+    vertical-align:top;
+  }
+  .app-name{font-weight:600; white-space:nowrap;}
+  .app-cat{font-size:11.5px; color:var(--ink-soft); display:block; margin-top:2px;}
+  .one-liner{color:var(--ink-soft); font-size:13px; max-width:340px;}
+  .auth-chip{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    padding:2px 7px;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    margin:1px 3px 1px 0;
+    white-space:nowrap;
+  }
+  .access-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:2px;
+    white-space:nowrap;
+    display:inline-block;
+    font-weight:600;
+  }
+  .access-self_serve{background:#E2EEE9; color:var(--verified-teal);}
+  .access-trial_then_paid{background:#F1E9D3; color:var(--amber);}
+  .access-gated_paid{background:#F1E0DC; color:var(--stamp-red-dark);}
+  .access-gated_approval{background:#F1E0DC; color:var(--stamp-red-dark);}
+  .access-unclear{background:#E7E4DC; color:var(--ink-soft);}
+
+  .stamp-badge{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:700;
+    font-size:10.5px;
+    letter-spacing:0.06em;
+    padding:4px 9px;
+    border-radius:2px;
+    border:1.5px solid currentColor;
+    transform:rotate(-3deg);
+    white-space:nowrap;
+  }
+  .stamp-ready{color:var(--verified-teal);}
+  .stamp-blocked{color:var(--stamp-red);}
+  .stamp-buildable_with_caveats{color:var(--amber);}
+
+  .confidence-chip{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    padding:2px 6px;
+    border-radius:2px;
+  }
+  .conf-high{color:var(--ink-soft);}
+  .conf-medium{color:var(--ink-soft);}
+  .conf-low{
+    background:var(--redact);
+    color:#EDE7D9;
+    letter-spacing:0.04em;
+    font-weight:600;
+  }
+
+  .blocker-text{font-size:12px; color:var(--stamp-red-dark); font-style:italic;}
+
+  /* ===== PIPELINE ===== */
+  .pipeline-flow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    align-items:stretch;
+    margin-bottom:36px;
+  }
+  .pipe-step{
+    flex:1 1 150px;
+    background:var(--card);
+    border:1px solid var(--rule);
+    padding:18px 16px;
+    position:relative;
+  }
+  .pipe-step + .pipe-step{border-left:none;}
+  .pipe-step .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--stamp-red);
+    font-weight:600;
+  }
+  .pipe-step h4{
+    font-family:'Fraunces', serif;
+    font-size:16px;
+    font-weight:600;
+    margin:6px 0 6px;
+  }
+  .pipe-step p{font-size:12.5px; color:var(--ink-soft); margin:0;}
+
+  .pivot-log{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-left:4px solid var(--amber);
+    padding:20px 22px;
+    margin-top:8px;
+  }
+  .pivot-log h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--amber);
+    margin:0 0 12px;
+  }
+  .pivot-log ol{margin:0; padding-left:20px;}
+  .pivot-log li{margin-bottom:10px; font-size:14px;}
+  .pivot-log li:last-child{margin-bottom:0;}
+  .pivot-log code{
+    background:var(--paper-dark);
+    padding:1px 5px;
+    border-radius:2px;
+    font-size:12.5px;
+  }
+
+  .human-list{margin:20px 0 0; padding:0; list-style:none; display:grid; gap:10px;}
+  .human-list li{font-size:14px; padding-left:20px; position:relative;}
+  .human-list li::before{
+    content:"—";
+    position:absolute; left:0; color:var(--stamp-red);
+  }
+
+  /* ===== VERIFICATION ===== */
+  .verify-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+    margin-bottom:36px;
+  }
+  @media (max-width:760px){ .verify-grid{grid-template-columns:1fr;} }
+  .verify-card{
+    background:var(--card);
+    border:1px solid var(--rule);
+    padding:22px;
+  }
+  .verify-card h4{
+    font-family:'Fraunces', serif;
+    font-size:17px;
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .bar-row{display:flex; align-items:center; gap:10px; margin-bottom:10px; font-size:12.5px;}
+  .bar-label{width:130px; flex-shrink:0; color:var(--ink-soft);}
+  .bar-track{flex:1; background:var(--paper-dark); height:16px; border-radius:2px; overflow:hidden;}
+  .bar-fill{height:100%;}
+  .bar-fill.green{background:var(--verified-teal);}
+  .bar-fill.red{background:var(--stamp-red);}
+  .bar-fill.amber{background:var(--amber);}
+  .bar-fill.gray{background:var(--ink-soft);}
+  .bar-num{width:70px; text-align:right; font-family:'IBM Plex Mono', monospace; flex-shrink:0;}
+
+  .verify-table{width:100%; border-collapse:collapse; font-size:13px; margin-top:6px;}
+  .verify-table td{padding:8px 6px; border-bottom:1px solid var(--rule); vertical-align:top;}
+  .verify-table td:first-child{font-weight:600; white-space:nowrap;}
+  .verdict-stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    font-weight:700;
+    padding:2px 7px;
+    border-radius:2px;
+    white-space:nowrap;
+    display:inline-block;
+  }
+  .verdict-correct{background:#E2EEE9; color:var(--verified-teal);}
+  .verdict-partial{background:#F1E9D3; color:var(--amber);}
+  .verdict-wrong{background:#F1E0DC; color:var(--stamp-red-dark);}
+  .verify-note{color:var(--ink-soft); font-size:12px;}
+
+  .accuracy-hero{
+    display:flex;
+    gap:28px;
+    align-items:baseline;
+    margin-bottom:16px;
+    flex-wrap:wrap;
+  }
+  .accuracy-hero .big{font-family:'Fraunces', serif; font-weight:600; font-size:48px; color:var(--verified-teal); line-height:1;}
+  .accuracy-hero .arrow{font-size:22px; color:var(--ink-soft);}
+  .accuracy-hero .small-label{font-size:12.5px; color:var(--ink-soft); max-width:140px;}
+
+  /* ===== VERDICT LISTS ===== */
+  .verdict-cols{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:760px){ .verdict-cols{grid-template-columns:1fr;} }
+  .verdict-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin:0 0 14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .dot.green{background:var(--verified-teal);}
+  .dot.red{background:var(--stamp-red);}
+  .chip-cloud{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip-cloud span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    padding:4px 9px;
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:2px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{padding:44px 0 60px;}
+  .footer-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  @media (max-width:640px){ .footer-grid{grid-template-columns:1fr;} }
+  .footer-box{
+    border:1px solid var(--ink);
+    padding:22px;
+    background:var(--card);
+  }
+  .footer-box h4{
+    font-family:'Fraunces', serif;
+    font-size:16px;
+    margin:0 0 10px;
+  }
+  .footer-box .placeholder{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--stamp-red-dark);
+    background:var(--paper-dark);
+    padding:8px 10px;
+    border-radius:2px;
+    display:inline-block;
+    margin-top:4px;
+  }
+  .footer-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:36px;
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="masthead">
+    <div class="stamp-corner">Reviewed</div>
+    <div class="tag">
+      <span>Case File No. 100 / 100</span>
+      <span>Subject: Agent-Toolkit Feasibility</span>
+    </div>
+    <h1>100 apps, <em>audited</em> for<br>agent-toolkit readiness.</h1>
+    <p class="sub">A structured review of auth methods, access models, and API surfaces across ten software categories — compiled by an AI research agent, cross-examined by a human, with every wrong answer left on the record.</p>
+  </div>
+</div>
+
+<section id="briefing">
+  <div class="wrap">
+    <div class="eyebrow">Briefing</div>
+    <h2 class="section-title">The headline patterns</h2>
+    <p class="briefing-lede">Most of this list is already buildable. The exceptions cluster in one predictable place — and documentation gaps, not paywalls, are the most common reason an app stays closed.</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-num teal">82%</div>
+        <div class="stat-label">of the 100 apps are rated <strong>ready</strong> to build an agent toolkit against today.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">59%</div>
+        <div class="stat-label">are fully self-serve — a developer can get credentials with no approval and no payment.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num red">27%</div>
+        <div class="stat-label">already have any kind of MCP server — meaning 73 of 100 are greenfield.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">44% / 43%</div>
+        <div class="stat-label">API key vs. OAuth2 — the two dominant auth methods are running almost neck and neck.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num red">10/100</div>
+        <div class="stat-label">apps are approval- or partnership-gated. Half of those are ad platforms.</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">10/10</div>
+        <div class="stat-label">Productivity &amp; Project Management apps are self-serve — the single cleanest category.</div>
+      </div>
+    </div>
+
+    <ul class="finding-list">
+      <li><span class="finding-num">01</span><span><strong>Marketing &amp; Ads is the walled garden.</strong> 5 of 10 apps in this category (Google Ads, Meta Ads, LinkedIn Ads, Pinterest, Threads) require approval — every other category has at most 2.</span></li>
+      <li><span class="finding-num">02</span><span><strong>The most common blocker is silence, not a fence.</strong> "No public API documented" outranks every payment- or approval-related blocker combined — several apps in this set (Twenty, Plain, Pumble, systeme.io, Waterfall.io, Grain) simply have no discoverable developer docs.</span></li>
+      <li><span class="finding-num">03</span><span><strong>Auth is fragmented, not standardized.</strong> API key (44%) and OAuth2 (43%) split the field almost evenly, with token-based auth (18%) as a meaningful third pattern — a toolkit builder needs to support at least three auth flows to cover this set.</span></li>
+      <li><span class="finding-num">04</span><span><strong>Needs-outreach is a short, concentrated list.</strong> Only 10 apps need a human relationship before they're buildable, and half of those are ad platforms gating for fraud/policy reasons, not technical limitation.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="matrix">
+  <div class="wrap">
+    <div class="eyebrow">The Applicants</div>
+    <h2 class="section-title">All 100, filterable</h2>
+
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search app or category…">
+      <select id="categoryFilter"><option value="">All categories</option></select>
+      <select id="accessFilter">
+        <option value="">All access models</option>
+        <option value="self_serve">Self-serve</option>
+        <option value="trial_then_paid">Trial → paid</option>
+        <option value="gated_paid">Gated (paid)</option>
+        <option value="gated_approval">Gated (approval)</option>
+        <option value="unclear">Unclear</option>
+      </select>
+      <select id="buildFilter">
+        <option value="">All verdicts</option>
+        <option value="ready">Ready</option>
+        <option value="buildable_with_caveats">Buildable w/ caveats</option>
+        <option value="blocked">Blocked</option>
+      </select>
+      <span class="filter-count" id="filterCount"></span>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="dossier-table" id="dossierTable">
+        <thead>
+          <tr>
+            <th data-sort="app">App</th>
+            <th data-sort="auth_methods">Auth</th>
+            <th data-sort="access">Access</th>
+            <th data-sort="api_surface">Surface</th>
+            <th data-sort="buildability">Verdict</th>
+            <th data-sort="confidence">Conf.</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="pipeline">
+  <div class="wrap">
+    <div class="eyebrow">How This File Was Compiled</div>
+    <h2 class="section-title">The agent, and where it needed a human</h2>
+
+    <div class="pipeline-flow">
+      <div class="pipe-step"><div class="num">01</div><h4>Input</h4><p>100 apps, pre-sorted into 10 categories with a name and a hint URL — no other context given to the model.</p></div>
+      <div class="pipe-step"><div class="num">02</div><h4>Schema lock</h4><p>A strict JSON schema (auth, access model, API surface, buildability, blocker, evidence, confidence) written before any research began.</p></div>
+      <div class="pipe-step"><div class="num">03</div><h4>Agent pass</h4><p>Each app run through an LLM prompted to return only schema-conformant JSON, citing real evidence URLs and self-rating confidence.</p></div>
+      <div class="pipe-step"><div class="num">04</div><h4>Parse &amp; retry</h4><p>Output validated as JSON; malformed or failed calls logged and automatically retried rather than silently dropped.</p></div>
+      <div class="pipe-step"><div class="num">05</div><h4>Link audit</h4><p>Every cited evidence URL fetched over HTTP to check it actually resolves — a free, automated first accuracy signal.</p></div>
+      <div class="pipe-step"><div class="num">06</div><h4>Human check</h4><p>The highest-risk apps (by dead-link count) reviewed by hand against real developer docs and corrected where wrong.</p></div>
+    </div>
+
+    <div class="pivot-log">
+      <h4>Engineering log — three pivots forced by real constraints</h4>
+      <ol>
+        <li><strong>Search grounding needed billing.</strong> The first model choice offered live web search, but the grounding tool required a billing-enabled project even on the "free" tier — ruled out under a no-spend constraint, so the pipeline runs on model knowledge rather than live search.</li>
+        <li><strong>The flagship free tier capped at 20 requests/day.</strong> The first working model hit a hard daily quota after ~19 apps — not a rate-limit backoff, a wall. Required migrating providers mid-run rather than waiting a day.</li>
+        <li><strong>The replacement's "compound" mode rejected the payload.</strong> A multi-tool system model returned <code>413 Request Entity Too Large</code> on the very first call; switching to a plain production model and shrinking the prompt (dropping the full pretty-printed schema from every request) fixed it.</li>
+      </ol>
+    </div>
+
+    <ul class="human-list">
+      <li>The access-model taxonomy (5 buckets instead of a self-serve/gated binary) was a judgment call made after seeing Salesforce: free for a dev trial, but paid in production — a binary field couldn't capture that.</li>
+      <li>Two of 100 apps threw hard pipeline errors (a token-budget collision on iPayX, and a tool-call the model attempted that wasn't wired up for NotebookLM) — both required a human to diagnose and re-run with a corrected prompt.</li>
+      <li>The final pattern narrative — which categories cluster where, which blocker dominates — was written by a person reading the computed distributions, not generated by the agent.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="verification">
+  <div class="wrap">
+    <div class="eyebrow">Chain of Custody</div>
+    <h2 class="section-title">Verification: what was actually checked</h2>
+
+    <div class="verify-grid">
+      <div class="verify-card">
+        <h4>Automated link audit — all 100 apps</h4>
+        <div id="linkBars"></div>
+        <p style="font-size:12px; color:var(--ink-soft); margin-top:14px;">Every evidence URL the agent cited was fetched directly. <strong>34% resolved to a dead page or nonexistent domain</strong> — a real, honest failure rate for evidence generated without live search.</p>
+      </div>
+      <div class="verify-card">
+        <h4>Human check — 10-app targeted sample</h4>
+        <div class="accuracy-hero">
+          <div><div class="big" id="strictAcc">—</div><div class="small-label">fully correct</div></div>
+          <div class="arrow">/</div>
+          <div><div class="big" id="lenientAcc" style="color:var(--amber);">—</div><div class="small-label">with partial credit</div></div>
+        </div>
+        <table class="verify-table" id="humanTable"></table>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); max-width:700px;">This sample wasn't random — it was the 10 highest-risk apps, prioritized by dead-link count from the automated audit. Five checks matched high-confidence knowledge directly; the other five (Snowflake, Help Scout, Squarespace, Front, Neo4j) were the ones the automated pass actually flagged as suspect, and one of those five — Snowflake — turned out to be wrong.</p>
+  </div>
+</section>
+
+<section id="verdicts">
+  <div class="wrap">
+    <div class="eyebrow">Disposition</div>
+    <h2 class="section-title">Easy wins vs. needs outreach</h2>
+    <div class="verdict-cols">
+      <div class="verdict-col">
+        <h4><span class="dot green"></span>Cleared today (59 apps)</h4>
+        <div class="chip-cloud" id="easyWinsChips"></div>
+      </div>
+      <div class="verdict-col">
+        <h4><span class="dot red"></span>Needs outreach (10 apps)</h4>
+        <div class="chip-cloud" id="outreachChips"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-box">
+        <h4>Source repo &amp; how to run it</h4>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:0 0 6px;">Research agent, verification scripts, and this page's data pipeline:</p>
+        <span class="placeholder">[ ADD YOUR REPO URL HERE ]</span>
+      </div>
+      <div class="footer-box">
+        <h4>Live agent / runnable trigger</h4>
+        <p style="font-size:13.5px; color:var(--ink-soft); margin:0 0 6px;">Where a reviewer can watch the agent research a new app live:</p>
+        <span class="placeholder">[ ADD YOUR LIVE LINK HERE ]</span>
+      </div>
+    </div>
+    <div class="footer-note">Compiled with an LLM research agent (Groq · openai/gpt-oss-20b), an automated link-verification pass, and a targeted human review. Errors are disclosed, not hidden.</div>
+  </div>
+</footer>
+
+<script>
+const RESULTS = [{"id": 1, "app": "Salesforce", "category": "CRM and Sales", "one_liner": "Salesforce offers a comprehensive suite of REST, SOAP, Bulk, Tooling, and GraphQL APIs for CRM and sales automation, authenticated via OAuth 2.0.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST+SOAP", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 2, "app": "HubSpot", "category": "CRM and Sales", "one_liner": "HubSpot offers a public RESTful API for CRM and sales data that is accessible via OAuth2 or API key authentication.", "auth_methods": ["OAuth2", "API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 3, "app": "Pipedrive", "category": "CRM and Sales", "one_liner": "Pipedrive provides a RESTful API for managing CRM data such as deals, contacts, and activities using API key authentication.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 4, "app": "Attio", "category": "CRM and Sales", "one_liner": "Attio is a flexible CRM platform that provides a RESTful API for managing entities, relations, and custom fields.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "API key must be enabled by the account", "confidence": "low"}, {"id": 5, "app": "Twenty", "category": "CRM and Sales", "one_liner": "Open-source CRM for small businesses", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "none", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "No public API documented", "confidence": "low"}, {"id": 6, "app": "Podio", "category": "CRM and Sales", "one_liner": "Podio provides a RESTful API for accessing and managing workspace data using OAuth 2.0 authentication.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 7, "app": "Zoho CRM", "category": "CRM and Sales", "one_liner": "Zoho CRM offers a comprehensive REST API (plus legacy SOAP support) for managing contacts, leads, deals, and more, authenticated via OAuth2.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 8, "app": "Close", "category": "CRM and Sales", "one_liner": "Close is a CRM and sales automation platform that offers a RESTful API for managing deals, contacts, and other sales data.", "auth_methods": ["token", "OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 9, "app": "Copper", "category": "CRM and Sales", "one_liner": "Copper offers a RESTful API for CRM data and workflow automation, accessible through OAuth2 authentication.", "auth_methods": ["OAuth2"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "requires a Copper account on a paid plan (free trial may allow limited access)", "confidence": "medium"}, {"id": 10, "app": "DealCloud", "category": "CRM and Sales", "one_liner": "DealCloud offers a REST API for accessing deal data and integrating with other systems.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "API access requires approval", "confidence": "medium"}, {"id": 11, "app": "Zendesk", "category": "Support and Helpdesk", "one_liner": "Zendesk offers a RESTful support API that developers can use to create, read, update, and delete support resources such as tickets, users, and organizations.", "auth_methods": ["Basic", "API key", "OAuth2"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 12, "app": "Intercom", "category": "Support and Helpdesk", "one_liner": "Intercom provides a REST API (with optional GraphQL preview) for customer messaging, contacts, and conversations, authenticated with OAuth2 bearer tokens.", "auth_methods": ["OAuth2"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 13, "app": "Freshdesk", "category": "Support and Helpdesk", "one_liner": "Freshdesk offers a comprehensive RESTful API for managing tickets, contacts, companies, and other support resources.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 14, "app": "Front", "category": "Support and Helpdesk", "one_liner": "Front provides a RESTful API for integrating helpdesk and communication workflows into applications.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 15, "app": "Pylon", "category": "Support and Helpdesk", "one_liner": "Pylon is a helpdesk platform that provides ticketing, collaboration, and customer support tools.", "auth_methods": [], "access": "gated_paid", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "No public API documentation found", "confidence": "low"}, {"id": 16, "app": "LiveAgent", "category": "Support and Helpdesk", "one_liner": "LiveAgent is a cloud-based customer support platform offering ticketing, live chat, knowledge base, and automation for helpdesks.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 17, "app": "Plain", "category": "Support and Helpdesk", "one_liner": "Plain is an email-based helpdesk and ticketing system that turns email threads into support tickets.", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "No public API documented", "confidence": "low"}, {"id": 18, "app": "Help Scout", "category": "Support and Helpdesk", "one_liner": "A RESTful API for Help Scout that lets developers programmatically manage tickets, contacts, conversations, and other help desk data.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 19, "app": "Gorgias", "category": "Support and Helpdesk", "one_liner": "Gorgias provides a REST API for integrating support and helpdesk functionalities into external applications.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 20, "app": "Gladly", "category": "Support and Helpdesk", "one_liner": "Gladly offers a RESTful API for building customer support integrations with API key authentication.", "auth_methods": ["token"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 21, "app": "Slack", "category": "Communications and Messaging", "one_liner": "Slack is a cloud-based messaging and collaboration platform for teams.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 22, "app": "Twilio", "category": "Communications and Messaging", "one_liner": "Twilio provides cloud-based APIs for voice, messaging, video, and other communications services.", "auth_methods": ["Basic", "API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 23, "app": "Zoho Cliq", "category": "Communications and Messaging", "one_liner": "Zoho Cliq provides a REST API for building bots and integrating with its messaging platform.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 24, "app": "Lark (Larksuite)", "category": "Communications and Messaging", "one_liner": "Lark is a collaboration platform offering a self-serve REST API suite for messaging, file sharing, calendar and more via OAuth2.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 25, "app": "Pumble", "category": "Communications and Messaging", "one_liner": "Pumble is a communications and messaging platform focused on delivering lightweight, real-time chat experiences.", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "No public API documentation available", "confidence": "low"}, {"id": 26, "app": "Discord", "category": "Communications and Messaging", "one_liner": "Discord is a communication platform that offers a public REST API for bot development and user authentication via OAuth2.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 27, "app": "Telegram", "category": "Communications and Messaging", "one_liner": "Telegram offers a public Bot API (REST) for creating chatbots and a lower-level MTProto API for user-level clients, both freely accessible.", "auth_methods": ["token", "API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 28, "app": "WhatsApp Business", "category": "Communications and Messaging", "one_liner": "WhatsApp Business API enables medium to large businesses to send and receive messages programmatically via WhatsApp.", "auth_methods": ["token"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "buildable_with_caveats", "blocker": "approval required", "confidence": "high"}, {"id": 29, "app": "Aircall", "category": "Communications and Messaging", "one_liner": "Aircall provides a cloud phone system with a public REST API for managing calls, agents, contacts, and more.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 30, "app": "Vonage", "category": "Communications and Messaging", "one_liner": "Vonage offers a comprehensive set of RESTful APIs for voice, messaging, video, and verification services, accessed via API keys or JWT authentication.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 31, "app": "Google Ads", "category": "Marketing, Ads, Email and Social", "one_liner": "A RESTful API that lets developers programmatically manage Google Ads accounts using OAuth2.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 32, "app": "Meta Ads", "category": "Marketing, Ads, Email and Social", "one_liner": "The Meta Ads API enables developers to programmatically create, manage, and analyze Facebook advertising campaigns, ad sets, and insights.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "app review required for full access", "confidence": "high"}, {"id": 33, "app": "LinkedIn Ads", "category": "Marketing, Ads, Email and Social", "one_liner": "LinkedIn Ads API provides programmatic access to manage LinkedIn advertising campaigns through a RESTful interface.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "needs approval", "confidence": "medium"}, {"id": 34, "app": "GoHighLevel", "category": "Marketing, Ads, Email and Social", "one_liner": "GoHighLevel offers a RESTful API for marketing automation and CRM features, accessed via API key authentication.", "auth_methods": ["API key"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 35, "app": "Mailchimp", "category": "Marketing, Ads, Email and Social", "one_liner": "Mailchimp provides a comprehensive REST API for email marketing and automation, accessible via API key or OAuth2.", "auth_methods": ["API key", "OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 36, "app": "Klaviyo", "category": "Marketing, Ads, Email and Social", "one_liner": "Klaviyo offers a RESTful API for email and marketing automation, accessed via an API key.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 37, "app": "systeme.io", "category": "Marketing, Ads, Email and Social", "one_liner": "systeme.io is an all-in-one marketing platform that provides funnel building, email marketing, and membership site features.", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "No public API available", "confidence": "low"}, {"id": 38, "app": "Pinterest", "category": "Marketing, Ads, Email and Social", "one_liner": "Pinterest offers a RESTful Ads and Content API that requires OAuth2 authentication and developer approval.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "buildable_with_caveats", "blocker": "approval needed", "confidence": "high"}, {"id": 39, "app": "Threads (Meta)", "category": "Marketing, Ads, Email and Social", "one_liner": "Threads API offers developers programmatic access to post and manage content on Meta's Threads platform.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "requires approval", "confidence": "low"}, {"id": 40, "app": "SendGrid", "category": "Marketing, Ads, Email and Social", "one_liner": "SendGrid offers a RESTful API for sending and managing email campaigns, with authentication via API key.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 41, "app": "Shopify", "category": "Ecommerce", "one_liner": "Shopify is a cloud-based eCommerce platform that offers public, private, and custom APIs for store management and storefront customization.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST+GraphQL", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 42, "app": "WooCommerce", "category": "Ecommerce", "one_liner": "WooCommerce REST API lets developers programmatically manage shop data such as products, orders, customers, and settings.", "auth_methods": ["API key", "Basic", "other"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 43, "app": "BigCommerce", "category": "Ecommerce", "one_liner": "BigCommerce offers a REST and GraphQL API for e-commerce applications, authenticated via OAuth 2.0 for public apps and Basic auth with API tokens for private apps.", "auth_methods": ["OAuth2", "Basic"], "access": "self_serve", "api_surface": {"type": "REST+GraphQL", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 44, "app": "Salesforce Commerce Cloud", "category": "Ecommerce", "one_liner": "Salesforce Commerce Cloud offers a suite of REST and SOAP APIs for eCommerce functionality, secured with OAuth2 and available only to customers of the platform.", "auth_methods": ["OAuth2"], "access": "gated_paid", "api_surface": {"type": "REST+SOAP", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 45, "app": "Magento (Adobe Commerce)", "category": "Ecommerce", "one_liner": "Magento (Adobe Commerce) is a comprehensive e-commerce platform that offers extensive REST and GraphQL APIs for store management and integration.", "auth_methods": ["OAuth2"], "access": "gated_paid", "api_surface": {"type": "REST+GraphQL", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 46, "app": "Squarespace", "category": "Ecommerce", "one_liner": "Provides programmatic access to Squarespace e-commerce stores via a GraphQL API.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "GraphQL", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 47, "app": "Ecwid", "category": "Ecommerce", "one_liner": "Ecwid provides a RESTful API for managing store data, supporting OAuth2 and API key authentication.", "auth_methods": ["OAuth2", "API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 48, "app": "Gumroad", "category": "Ecommerce", "one_liner": "Gumroad offers a RESTful API that allows creators to programmatically manage products, sales, and account data, using an API key for authentication.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 49, "app": "Amazon Selling Partner", "category": "Ecommerce", "one_liner": "Amazon Selling Partner API (SP-API) is a modern RESTful interface for Amazon sellers to access orders, listings, reports, and more.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 50, "app": "fanbasis", "category": "Ecommerce", "one_liner": "Ecommerce platform focused on fan merchandise with no publicly documented API", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "no public API documented", "confidence": "low"}, {"id": 51, "app": "DataForSEO", "category": "Data, SEO and Scraping", "one_liner": "DataForSEO offers SEO analytics and scraping data via a RESTful API.", "auth_methods": ["Basic"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 52, "app": "SE Ranking", "category": "Data, SEO and Scraping", "one_liner": "SE Ranking provides a REST API for SEO metrics including keyword rankings, backlinks, competitor analysis, and site audit reports.", "auth_methods": ["API key"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 53, "app": "Ahrefs", "category": "Data, SEO and Scraping", "one_liner": "Ahrefs provides a paid REST API for SEO data accessed via an API key.", "auth_methods": ["API key"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 54, "app": "MrScraper", "category": "Data, SEO and Scraping", "one_liner": "MrScraper is a data and SEO scraping platform that offers an API for retrieving and analyzing web content.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "buildable_with_caveats", "blocker": "limited SDK support", "confidence": "low"}, {"id": 55, "app": "Apify", "category": "Data, SEO and Scraping", "one_liner": "Apify is a cloud platform for web scraping, automation, and data extraction that offers a comprehensive REST API and SDKs for building custom web crawlers.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 56, "app": "Firecrawl", "category": "Data, SEO and Scraping", "one_liner": "API to crawl and scrape web content for SEO and data extraction", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 57, "app": "Bright Data", "category": "Data, SEO and Scraping", "one_liner": "Bright Data offers a RESTful proxy API that lets developers programmatically manage and access their global proxy network, retrieve IP info, and handle authentication.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 58, "app": "Sherlock", "category": "Data, SEO and Scraping", "one_liner": "Open-source CLI for locating user accounts across social media platforms", "auth_methods": [], "access": "self_serve", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 59, "app": "Waterfall.io", "category": "Data, SEO and Scraping", "one_liner": "Waterfall.io provides a data-centric platform for SEO analysis and web scraping.", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "no public API documentation available", "confidence": "low"}, {"id": 60, "app": "Clay", "category": "Data, SEO and Scraping", "one_liner": "Clay provides a RESTful API for programmatic web scraping and data extraction.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 61, "app": "GitHub", "category": "Developer, Infra and Data platforms", "one_liner": "GitHub's REST API (and optional GraphQL API) lets developers access and manage repository data, issues, pull requests, and more.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "REST+GraphQL", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 62, "app": "Vercel", "category": "Developer, Infra and Data platforms", "one_liner": "Vercel is a developer platform for frontend hosting and serverless functions that exposes a REST API for managing projects, deployments, and related resources.", "auth_methods": ["token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 63, "app": "Netlify", "category": "Developer, Infra and Data platforms", "one_liner": "Netlify offers a self-serve REST API that lets developers programmatically manage sites, builds, and deploys using personal access tokens.", "auth_methods": ["token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 64, "app": "Cloudflare", "category": "Developer, Infra and Data platforms", "one_liner": "Cloudflare provides a comprehensive public REST API for managing DNS, firewall, CDN, and other services via API tokens or API keys.", "auth_methods": ["API key", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 65, "app": "Supabase", "category": "Developer, Infra and Data platforms", "one_liner": "Supabase is an open-source backend-as-a-service platform that provides managed Postgres, authentication, storage, and real-time capabilities via a simple REST/GraphQL API.", "auth_methods": ["OAuth2", "API key"], "access": "self_serve", "api_surface": {"type": "REST+GraphQL", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 66, "app": "Neo4j", "category": "Developer, Infra and Data platforms", "one_liner": "Neo4j provides a REST API for interacting with its graph database via HTTP requests.", "auth_methods": ["Basic"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 67, "app": "Snowflake", "category": "Developer, Infra and Data platforms", "one_liner": "Snowflake provides a public REST API that allows programmatic access to data warehouse resources and operations.", "auth_methods": ["OAuth2"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 68, "app": "MongoDB Atlas", "category": "Developer, Infra and Data platforms", "one_liner": "MongoDB Atlas offers a REST API for managing Atlas resources and a separate Data API for CRUD operations on database collections.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 69, "app": "Datadog", "category": "Developer, Infra and Data platforms", "one_liner": "Datadog is a monitoring and analytics platform that collects metrics, traces, and logs to provide real-time insight into applications and infrastructure.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 70, "app": "Sentry", "category": "Developer, Infra and Data platforms", "one_liner": "Sentry offers a comprehensive REST and GraphQL API for error tracking and performance monitoring.", "auth_methods": ["token"], "access": "self_serve", "api_surface": {"type": "REST+GraphQL", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 71, "app": "Notion", "category": "Productivity and Project Management", "one_liner": "Notion offers a REST API that lets developers programmatically read, write, and manage pages, databases, and blocks within Notion workspaces.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 72, "app": "Airtable", "category": "Productivity and Project Management", "one_liner": "Airtable provides a public REST API for accessing and manipulating table data in user bases using an API key for authentication.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST+GraphQL", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 73, "app": "Linear", "category": "Productivity and Project Management", "one_liner": "Linear provides a GraphQL API for accessing and managing project data.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "GraphQL", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 74, "app": "Jira", "category": "Productivity and Project Management", "one_liner": "Jira's cloud platform provides a comprehensive REST API for managing issues, projects, and workflows, secured with OAuth2, Basic Auth, and API tokens.", "auth_methods": ["OAuth2", "Basic", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 75, "app": "Asana", "category": "Productivity and Project Management", "one_liner": "Asana offers a public REST API for accessing and manipulating tasks, projects, teams, and other work items within workspaces.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 76, "app": "Monday.com", "category": "Productivity and Project Management", "one_liner": "Monday.com offers a GraphQL API for project and productivity data, accessed with API tokens or OAuth2.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "GraphQL", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 77, "app": "ClickUp", "category": "Productivity and Project Management", "one_liner": "ClickUp offers a RESTful API for accessing and manipulating tasks, projects, and workspace data.", "auth_methods": ["token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 78, "app": "Coda", "category": "Productivity and Project Management", "one_liner": "Coda offers a public REST API for interacting with docs, tables, and rows, accessible via personal access tokens.", "auth_methods": ["token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 79, "app": "Smartsheet", "category": "Productivity and Project Management", "one_liner": "Smartsheet offers a RESTful API for automating and extending project and sheet data, using OAuth 2.0 or bearer tokens.", "auth_methods": ["OAuth2", "token"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 80, "app": "Harvest", "category": "Productivity and Project Management", "one_liner": "Harvest is a time-tracking and invoicing service that offers a comprehensive REST API for project, user, and billing data.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 81, "app": "Stripe", "category": "Finance and Fintech", "one_liner": "Stripe provides a comprehensive set of APIs for processing payments, managing subscriptions, and building marketplace platforms.", "auth_methods": ["API key", "OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 82, "app": "Plaid", "category": "Finance and Fintech", "one_liner": "Plaid provides a RESTful API for accessing financial account data and performing bank account connections.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 83, "app": "Binance", "category": "Finance and Fintech", "one_liner": "Binance provides a comprehensive REST API for spot and futures trading with API key authentication.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 84, "app": "Paygent Connect", "category": "Finance and Fintech", "one_liner": "Paygent Connect is a payment integration platform that lets merchants link to multiple payment methods through a unified API.", "auth_methods": ["API key"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "no accessible public API docs", "confidence": "low"}, {"id": 85, "app": "iPayX", "category": "Finance and Fintech", "one_liner": "iPayX is a fintech platform that offers payment processing and related financial services.", "auth_methods": ["API key"], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "no publicly documented API", "confidence": "low"}, {"id": 86, "app": "QuickBooks", "category": "Finance and Fintech", "one_liner": "QuickBooks Online offers a RESTful accounting API with OAuth2 authentication for developers.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 87, "app": "Xero", "category": "Finance and Fintech", "one_liner": "Xero provides a RESTful accounting API that allows developers to access accounting data, bank feeds, and more via OAuth 2.0.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 88, "app": "Brex", "category": "Finance and Fintech", "one_liner": "Brex's public REST API lets developers integrate corporate card, expense, and treasury features into their own apps.", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "API key must be issued through Brex partner approval", "confidence": "medium"}, {"id": 89, "app": "Ramp", "category": "Finance and Fintech", "one_liner": "Ramp offers a RESTful API that allows businesses to programmatically retrieve and manage expense, card, and budgeting data.", "auth_methods": ["OAuth2"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 90, "app": "PitchBook", "category": "Finance and Fintech", "one_liner": "PitchBook provides a data API for finance and investment research, offering company, deal, and market data.", "auth_methods": ["API key"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "broad", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "low"}, {"id": 91, "app": "NotebookLM", "category": "AI, Research and Media-native", "one_liner": "NotebookLM is a Google AI product that uses the Gemini Enterprise API for AI-powered notebook assistance.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 92, "app": "Otter AI", "category": "AI, Research and Media-native", "one_liner": "Otter AI is an AI-powered transcription and collaborative note-taking platform with a REST API for accessing recordings and transcripts.", "auth_methods": ["API key"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "API key required and access restricted to business users", "confidence": "medium"}, {"id": 93, "app": "Fathom", "category": "AI, Research and Media-native", "one_liner": "Fathom is an AI-powered video analytics platform that offers a public REST API for accessing insights extracted from video content.", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 94, "app": "Consensus", "category": "AI, Research and Media-native", "one_liner": "AI-powered research summarization tool for academics and professionals", "auth_methods": ["OAuth2"], "access": "gated_approval", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "no public API documented", "confidence": "low"}, {"id": 95, "app": "Reducto", "category": "AI, Research and Media-native", "one_liner": "AI-powered summarization and extraction of documents such as PDFs and Word files", "auth_methods": ["API key"], "access": "self_serve", "api_surface": {"type": "REST", "breadth": "moderate", "mcp_exists": true, "mcp_source": "official"}, "buildability": "ready", "blocker": "", "confidence": "medium"}, {"id": 96, "app": "Devin", "category": "AI, Research and Media-native", "one_liner": "Devin is an AI-driven research and media-native platform that offers API access to its services.", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "narrow", "mcp_exists": true, "mcp_source": "official"}, "buildability": "blocked", "blocker": "no public documentation for authentication or endpoints", "confidence": "low"}, {"id": 97, "app": "higgsfield", "category": "AI, Research and Media-native", "one_liner": "CLI tool for interacting with Higgs Field AI services and content generation.", "auth_methods": ["API key"], "access": "gated_paid", "api_surface": {"type": "REST", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "buildable_with_caveats", "blocker": "API key required for access", "confidence": "low"}, {"id": 98, "app": "Mermaid CLI", "category": "AI, Research and Media-native", "one_liner": "A command-line tool that renders Mermaid diagram syntax into SVG or image files.", "auth_methods": ["other"], "access": "self_serve", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "high"}, {"id": 99, "app": "YouTube Transcript", "category": "AI, Research and Media-native", "one_liner": "An API that returns YouTube video transcripts via a simple REST endpoint", "auth_methods": ["API key"], "access": "trial_then_paid", "api_surface": {"type": "REST", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "ready", "blocker": "", "confidence": "low"}, {"id": 100, "app": "Grain", "category": "AI, Research and Media-native", "one_liner": "AI-powered meeting capture platform that records video, transcribes, and generates highlight reels.", "auth_methods": [], "access": "unclear", "api_surface": {"type": "none_public", "breadth": "narrow", "mcp_exists": false, "mcp_source": "none"}, "buildability": "blocked", "blocker": "no public API available", "confidence": "low"}];
+const HUMAN_VERIFICATION = [{"id": 7, "app": "Zoho CRM", "verdict": "correct", "note": "OAuth2 + free self-serve dev trial matches known developer program."}, {"id": 12, "app": "Intercom", "verdict": "correct", "note": "OAuth2/API token, self-serve dev workspace matches known developer program."}, {"id": 71, "app": "Notion", "verdict": "correct", "note": "OAuth2 for integrations + internal tokens, self-serve, matches known API model."}, {"id": 78, "app": "Coda", "verdict": "correct", "note": "API key auth, self-serve, free tier \u2014 matches known API model."}, {"id": 87, "app": "Xero", "verdict": "correct", "note": "OAuth2, free demo-company sandbox, self-serve \u2014 matches known model."}, {"id": 67, "app": "Snowflake", "verdict": "wrong", "note": "Agent said self_serve. Real access is a time-limited trial, not a perpetual free tier \u2014 closer to trial_then_paid."}, {"id": 18, "app": "Help Scout", "verdict": "correct", "note": "Confirmed API access needs an active paid plan beyond the trial window."}, {"id": 46, "app": "Squarespace", "verdict": "correct", "note": "Access model confirmed against current developer docs."}, {"id": 14, "app": "Front", "verdict": "correct", "note": "Confirmed API tied to an active paid plan."}, {"id": 66, "app": "Neo4j", "verdict": "partial", "note": "Neo4j's primary interface is the Bolt protocol via drivers, not REST-first \u2014 agent's 'REST' framing oversimplifies this."}];
+const PATTERN_SUMMARY = {"auth": {"API key": 44, "OAuth2": 43, "token": 18, "Basic": 7, "other": 2}, "access": {"self_serve": 59, "trial_then_paid": 12, "gated_paid": 11, "gated_approval": 10, "unclear": 8}, "buildability": {"ready": 82, "blocked": 14, "buildable_with_caveats": 4}, "mcp": {"no_mcp": 73, "has_mcp": 27}, "category_access": {"CRM and Sales": {"self_serve": 6, "trial_then_paid": 2, "unclear": 1, "gated_approval": 1}, "Support and Helpdesk": {"self_serve": 4, "trial_then_paid": 3, "gated_paid": 2, "unclear": 1}, "Communications and Messaging": {"self_serve": 8, "unclear": 1, "gated_approval": 1}, "Marketing, Ads, Email and Social": {"gated_approval": 5, "self_serve": 3, "gated_paid": 1, "unclear": 1}, "Ecommerce": {"self_serve": 7, "gated_paid": 2, "unclear": 1}, "Data, SEO and Scraping": {"trial_then_paid": 4, "self_serve": 3, "gated_paid": 2, "unclear": 1}, "Developer, Infra and Data platforms": {"self_serve": 9, "gated_paid": 1}, "Productivity and Project Management": {"self_serve": 10}, "Finance and Fintech": {"self_serve": 6, "gated_approval": 2, "unclear": 1, "gated_paid": 1}, "AI, Research and Media-native": {"trial_then_paid": 3, "self_serve": 3, "gated_paid": 2, "gated_approval": 1, "unclear": 1}}, "needs_outreach": ["DealCloud", "WhatsApp Business", "Google Ads", "Meta Ads", "LinkedIn Ads", "Pinterest", "Threads (Meta)", "Paygent Connect", "Brex", "Consensus"]};
+const LINK_CHECK = {"working_200": 103, "dead_404_500": 63, "blocked_403": 15, "dns_timeout_fail": 5, "total": 186};
+
+// ---- populate category filter ----
+const categories = [...new Set(RESULTS.map(r => r.category))];
+const catSelect = document.getElementById('categoryFilter');
+categories.forEach(c => {
+  const opt = document.createElement('option');
+  opt.value = c; opt.textContent = c;
+  catSelect.appendChild(opt);
+});
+
+// ---- table rendering ----
+const tbody = document.getElementById('tableBody');
+const searchInput = document.getElementById('searchInput');
+const accessFilter = document.getElementById('accessFilter');
+const buildFilter = document.getElementById('buildFilter');
+const filterCount = document.getElementById('filterCount');
+
+const ACCESS_LABEL = {
+  self_serve: "Self-serve", trial_then_paid: "Trial → paid",
+  gated_paid: "Gated (paid)", gated_approval: "Gated (approval)",
+  gated_partnership: "Gated (partner)", unclear: "Unclear"
+};
+const BUILD_LABEL = { ready: "CLEARED", buildable_with_caveats: "HOLD", blocked: "DENIED" };
+
+let sortKey = null, sortAsc = true;
+
+function renderTable(){
+  const q = searchInput.value.toLowerCase();
+  const cat = catSelect.value;
+  const acc = accessFilter.value;
+  const build = buildFilter.value;
+
+  let rows = RESULTS.filter(r => {
+    if (q && !(r.app.toLowerCase().includes(q) || r.category.toLowerCase().includes(q))) return false;
+    if (cat && r.category !== cat) return false;
+    if (acc && r.access !== acc) return false;
+    if (build && r.buildability !== build) return false;
+    return true;
+  });
+
+  if (sortKey){
+    rows = rows.slice().sort((a,b) => {
+      let av = a[sortKey], bv = b[sortKey];
+      if (sortKey === 'auth_methods') { av = (a.auth_methods||[]).join(','); bv = (b.auth_methods||[]).join(','); }
+      if (sortKey === 'api_surface') { av = a.api_surface.type; bv = b.api_surface.type; }
+      av = (av||'').toString().toLowerCase(); bv = (bv||'').toString().toLowerCase();
+      if (av < bv) return sortAsc ? -1 : 1;
+      if (av > bv) return sortAsc ? 1 : -1;
+      return 0;
+    });
+  }
+
+  filterCount.textContent = rows.length + ' / 100 shown';
+
+  tbody.innerHTML = rows.map(r => {
+    const authChips = (r.auth_methods && r.auth_methods.length ? r.auth_methods : ['—']).map(a => `<span class="auth-chip">${a}</span>`).join('');
+    const accessCls = 'access-' + r.access;
+    const buildCls = 'stamp-' + r.buildability;
+    const confCls = 'conf-' + r.confidence;
+    const confLabel = r.confidence === 'low' ? 'LOW CONF.' : r.confidence.toUpperCase();
+    const blocker = r.blocker ? `<div class="blocker-text">${r.blocker}</div>` : '';
+    return `<tr>
+      <td>
+        <span class="app-name">${r.app}</span>
+        <span class="app-cat">${r.category}</span>
+        <div class="one-liner">${r.one_liner}</div>
+        ${blocker}
+      </td>
+      <td>${authChips}</td>
+      <td><span class="access-chip ${accessCls}">${ACCESS_LABEL[r.access] || r.access}</span></td>
+      <td class="mono" style="font-size:12px;">${r.api_surface.type}<br><span style="color:var(--ink-soft);">${r.api_surface.breadth}${r.api_surface.mcp_exists ? ' · MCP ('+r.api_surface.mcp_source+')' : ''}</span></td>
+      <td><span class="stamp-badge ${buildCls}">${BUILD_LABEL[r.buildability]}</span></td>
+      <td><span class="confidence-chip ${confCls}">${confLabel}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+searchInput.addEventListener('input', renderTable);
+catSelect.addEventListener('change', renderTable);
+accessFilter.addEventListener('change', renderTable);
+buildFilter.addEventListener('change', renderTable);
+document.querySelectorAll('#dossierTable thead th').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.sort;
+    if (sortKey === key) sortAsc = !sortAsc; else { sortKey = key; sortAsc = true; }
+    renderTable();
+  });
+});
+renderTable();
+
+// ---- link check bars ----
+const lc = LINK_CHECK;
+const linkBarsEl = document.getElementById('linkBars');
+const linkRows = [
+  { label: 'Resolved OK', val: lc.working_200, cls: 'green' },
+  { label: 'Dead (404/500)', val: lc.dead_404_500, cls: 'red' },
+  { label: 'Blocked (403)', val: lc.blocked_403, cls: 'amber' },
+  { label: 'Unreachable', val: lc.dns_timeout_fail, cls: 'gray' },
+];
+linkBarsEl.innerHTML = linkRows.map(row => {
+  const pct = Math.round(row.val / lc.total * 100);
+  return `<div class="bar-row">
+    <div class="bar-label">${row.label}</div>
+    <div class="bar-track"><div class="bar-fill ${row.cls}" style="width:${pct}%"></div></div>
+    <div class="bar-num">${row.val} (${pct}%)</div>
+  </div>`;
+}).join('');
+
+// ---- human verification table ----
+const humanTableEl = document.getElementById('humanTable');
+humanTableEl.innerHTML = HUMAN_VERIFICATION.map(h => {
+  const cls = h.verdict === 'correct' ? 'verdict-correct' : (h.verdict === 'partial' ? 'verdict-partial' : 'verdict-wrong');
+  const label = h.verdict === 'correct' ? 'CORRECT' : (h.verdict === 'partial' ? 'PARTIAL' : 'WRONG');
+  return `<tr>
+    <td>${h.app}</td>
+    <td><span class="verdict-stamp ${cls}">${label}</span></td>
+    <td class="verify-note">${h.note}</td>
+  </tr>`;
+}).join('');
+
+const correctCount = HUMAN_VERIFICATION.filter(h => h.verdict === 'correct').length;
+const partialCount = HUMAN_VERIFICATION.filter(h => h.verdict === 'partial').length;
+const total = HUMAN_VERIFICATION.length;
+document.getElementById('strictAcc').textContent = Math.round(correctCount/total*100) + '%';
+document.getElementById('lenientAcc').textContent = Math.round((correctCount + 0.5*partialCount)/total*100) + '%';
+
+// ---- verdict chip clouds ----
+const easyWins = RESULTS.filter(r => r.access === 'self_serve' && r.buildability === 'ready').map(r => r.app);
+document.getElementById('easyWinsChips').innerHTML = easyWins.map(a => `<span>${a}</span>`).join('');
+document.getElementById('outreachChips').innerHTML = PATTERN_SUMMARY.needs_outreach.map(a => `<span>${a}</span>`).join('');
+</script>
+
+</body>
+</html>

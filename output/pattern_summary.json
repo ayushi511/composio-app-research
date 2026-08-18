@@ -1,0 +1,167 @@
+{
+  "total_apps": 100,
+  "auth_distribution": {
+    "OAuth2": 43,
+    "API key": 44,
+    "token": 18,
+    "Basic": 7,
+    "other": 2
+  },
+  "access_distribution": {
+    "self_serve": 59,
+    "trial_then_paid": 12,
+    "unclear": 8,
+    "gated_approval": 10,
+    "gated_paid": 11
+  },
+  "buildability_distribution": {
+    "ready": 82,
+    "blocked": 14,
+    "buildable_with_caveats": 4
+  },
+  "access_by_category": {
+    "CRM and Sales": {
+      "self_serve": 6,
+      "trial_then_paid": 2,
+      "unclear": 1,
+      "gated_approval": 1
+    },
+    "Support and Helpdesk": {
+      "trial_then_paid": 3,
+      "gated_paid": 2,
+      "self_serve": 4,
+      "unclear": 1
+    },
+    "Communications and Messaging": {
+      "self_serve": 8,
+      "unclear": 1,
+      "gated_approval": 1
+    },
+    "Marketing, Ads, Email and Social": {
+      "gated_approval": 5,
+      "gated_paid": 1,
+      "self_serve": 3,
+      "unclear": 1
+    },
+    "Ecommerce": {
+      "self_serve": 7,
+      "gated_paid": 2,
+      "unclear": 1
+    },
+    "Data, SEO and Scraping": {
+      "trial_then_paid": 4,
+      "gated_paid": 2,
+      "self_serve": 3,
+      "unclear": 1
+    },
+    "Developer, Infra and Data platforms": {
+      "self_serve": 9,
+      "gated_paid": 1
+    },
+    "Productivity and Project Management": {
+      "self_serve": 10
+    },
+    "Finance and Fintech": {
+      "self_serve": 6,
+      "gated_approval": 2,
+      "unclear": 1,
+      "gated_paid": 1
+    },
+    "AI, Research and Media-native": {
+      "trial_then_paid": 3,
+      "gated_paid": 2,
+      "self_serve": 3,
+      "gated_approval": 1,
+      "unclear": 1
+    }
+  },
+  "top_blockers": {
+    "no public api documented": 4,
+    "no public api documentation available": 2,
+    "no public api available": 2,
+    "api key must be enabled by the account": 1,
+    "requires a copper account on a paid plan (free trial may allow limited access)": 1,
+    "api access requires approval": 1,
+    "no public api documentation found": 1,
+    "approval required": 1,
+    "app review required for full access": 1,
+    "needs approval": 1
+  },
+  "mcp_distribution": {
+    "no MCP": 73,
+    "has MCP (official)": 27
+  },
+  "easy_wins": [
+    "Salesforce",
+    "HubSpot",
+    "Pipedrive",
+    "Podio",
+    "Zoho CRM",
+    "Close",
+    "Freshdesk",
+    "Front",
+    "Help Scout",
+    "Gorgias",
+    "Slack",
+    "Twilio",
+    "Zoho Cliq",
+    "Lark (Larksuite)",
+    "Discord",
+    "Telegram",
+    "Aircall",
+    "Vonage",
+    "Mailchimp",
+    "Klaviyo",
+    "SendGrid",
+    "Shopify",
+    "WooCommerce",
+    "BigCommerce",
+    "Squarespace",
+    "Ecwid",
+    "Gumroad",
+    "Amazon Selling Partner",
+    "Apify",
+    "Firecrawl",
+    "Sherlock",
+    "GitHub",
+    "Vercel",
+    "Netlify",
+    "Cloudflare",
+    "Supabase",
+    "Neo4j",
+    "MongoDB Atlas",
+    "Datadog",
+    "Sentry",
+    "Notion",
+    "Airtable",
+    "Linear",
+    "Jira",
+    "Asana",
+    "Monday.com",
+    "ClickUp",
+    "Coda",
+    "Smartsheet",
+    "Harvest",
+    "Stripe",
+    "Plaid",
+    "Binance",
+    "QuickBooks",
+    "Xero",
+    "Ramp",
+    "Fathom",
+    "Reducto",
+    "Mermaid CLI"
+  ],
+  "needs_outreach": [
+    "DealCloud",
+    "WhatsApp Business",
+    "Google Ads",
+    "Meta Ads",
+    "LinkedIn Ads",
+    "Pinterest",
+    "Threads (Meta)",
+    "Paygent Connect",
+    "Brex",
+    "Consensus"
+  ]
+}

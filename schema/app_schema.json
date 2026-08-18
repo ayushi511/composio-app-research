@@ -1,0 +1,24 @@
+{
+  "id": null,
+  "app": "",
+  "category": "",
+  "one_liner": "",
+  "auth_methods": [],
+  "access": "self_serve | trial_then_paid | gated_paid | gated_approval | gated_partnership | unclear",
+  "api_surface": {
+    "type": "REST | GraphQL | REST+GraphQL | SOAP | none_public",
+    "breadth": "narrow | moderate | broad",
+    "mcp_exists": null,
+    "mcp_source": "official | community | none"
+  },
+  "buildability": "ready | buildable_with_caveats | blocked",
+  "blocker": "",
+  "evidence_urls": [],
+  "confidence": "high | medium | low",
+  "agent_notes": "",
+  "verification": {
+    "checked_by_human": false,
+    "human_verdict": null,
+    "discrepancy": null
+  }
+}

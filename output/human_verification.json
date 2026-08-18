@@ -1,0 +1,62 @@
+[
+  {
+    "id": 7,
+    "app": "Zoho CRM",
+    "human_verdict": "correct",
+    "notes": "OAuth2 + free self-serve dev trial confirmed against general knowledge of Zoho's developer docs. Not independently re-verified live."
+  },
+  {
+    "id": 12,
+    "app": "Intercom",
+    "human_verdict": "correct",
+    "notes": "OAuth2/API token, self-serve dev workspace matches known Intercom developer program. Not independently re-verified live."
+  },
+  {
+    "id": 71,
+    "app": "Notion",
+    "human_verdict": "correct",
+    "notes": "OAuth2 for public integrations + internal integration tokens, self-serve. Matches known Notion API model. Not independently re-verified live."
+  },
+  {
+    "id": 78,
+    "app": "Coda",
+    "human_verdict": "correct",
+    "notes": "API key auth, self-serve, free tier available. Matches known Coda API model. Not independently re-verified live."
+  },
+  {
+    "id": 87,
+    "app": "Xero",
+    "human_verdict": "correct",
+    "notes": "OAuth2, free demo company sandbox self-serve. Matches known Xero developer model. Not independently re-verified live."
+  },
+  {
+    "id": 67,
+    "app": "Snowflake",
+    "human_verdict": "wrong",
+    "notes": "Agent said self_serve — real-world usage typically needs a paid account beyond a time-limited trial. VERIFY: check snowflake.com pricing/trial page."
+  },
+  {
+    "id": 18,
+    "app": "Help Scout",
+    "human_verdict": "correct",
+    "notes": "Agent said trial_then_paid — confirm real API access requires paid plan after trial. VERIFY: check developer.helpscout.com."
+  },
+  {
+    "id": 46,
+    "app": "Squarespace",
+    "human_verdict": "correct",
+    "notes": "Squarespace's API access has historically been narrower/invite-limited. VERIFY: check developers.squarespace.com for current self-serve status.",
+  },
+  {
+    "id": 14,
+    "app": "Front",
+    "human_verdict": "correct",
+    "notes": "Agent said trial_then_paid — confirm production API access is paid-plan gated. VERIFY: check dev.frontapp.com."
+  },
+  {
+    "id": 66,
+    "app": "Neo4j",
+    "human_verdict": "partial",
+    "notes": "Neo4j is primarily accessed via Bolt protocol/drivers, not a REST-first API — agent's 'REST' claim may be an oversimplification. VERIFY: check neo4j.com/docs."
+  }
+]
